@@ -1,6 +1,6 @@
-### **Ohjemistotekniikka, harjoitustyö**
+# **Ohjemistotekniikka, harjoitustyö**
 ## **Tehtavat**
-# Viikko 1
+### Viikko 1
 
 [gitlog.txt](https://github.com/iisu36/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
