@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
 
 public class MaksukorttiTest {
 
+    Maksukortti kortti;
+
     public MaksukorttiTest() {
     }
 
@@ -26,6 +28,7 @@ public class MaksukorttiTest {
 
     @Before
     public void setUp() {
+        kortti = new Maksukortti(10);
     }
 
     @After
@@ -34,8 +37,6 @@ public class MaksukorttiTest {
 
     @Test
     public void konstruktoriAsettaaSaldonOikein() {
-        Maksukortti kortti = new Maksukortti(10);
-
         String vastaus = kortti.toString();
 
         assertEquals("Kortilla on rahaa 10.0 euroa", vastaus);
@@ -43,10 +44,75 @@ public class MaksukorttiTest {
 
     @Test
     public void syoEdullisestiVahentaaSaldoaOikein() {
-        Maksukortti kortti = new Maksukortti(10);
-
         kortti.syoEdullisesti();
 
         assertEquals("Kortilla on rahaa 7.5 euroa", kortti.toString());
+    }
+
+    @Test
+    public void syoMaukkaastiVahentaaSaldoaOikein() {
+        kortti.syoMaukkaasti();
+
+        assertEquals("Kortilla on rahaa 6.0 euroa", kortti.toString());
+    }
+
+    @Test
+    public void syoEdullisestiEiVieSaldoaNegatiiviseksi() {
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        // nyt kortin saldo on 2
+        kortti.syoEdullisesti();
+
+        assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());
+    }
+    
+    @Test
+    public void syoMaukkaastiEiVieSaldoaNegatiiviseksi() {
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        // nyt kortin saldo on 2
+        kortti.syoMaukkaasti();
+
+        assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());
+    }
+    
+    @Test
+    public void syoEdullisestiOnnistuuTasarahalla() {
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        kortti.lataaRahaa(0.5);
+        // nyt kortin saldo on 2.5
+        kortti.syoEdullisesti();
+
+        assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
+    }
+    
+    @Test
+    public void syoMaukkaastiOnnistuuTasarahalla() {
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        kortti.lataaRahaa(2);
+        // nyt kortin saldo on 4
+        kortti.syoMaukkaasti();
+
+        assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
+    }
+
+    @Test
+    public void kortilleVoiLadataRahaa() {
+        kortti.lataaRahaa(25);
+        assertEquals("Kortilla on rahaa 35.0 euroa", kortti.toString());
+    }
+    
+    @Test
+    public void kortilleEiVoiLadataNegatiivista() {
+        kortti.lataaRahaa(-25);
+        assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
+    }
+
+    @Test
+    public void kortinSaldoEiYlitaMaksimiarvoa() {
+        kortti.lataaRahaa(200);
+        assertEquals("Kortilla on rahaa 150.0 euroa", kortti.toString());
     }
 }
