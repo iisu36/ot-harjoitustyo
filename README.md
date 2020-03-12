@@ -7,3 +7,5 @@
 [komentorivi.txt](https://github.com/iisu36/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 ### Viikko 2
+
+paikallinen epäsynkrooni
