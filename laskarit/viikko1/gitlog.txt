@@ -1,0 +1,103 @@
+commit 52de94a05a5130a495acac10a45bfc8676a56037
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 15:24:03 2020 +0200
+
+    poistettiin file1 ja muutettiin file2 nimeksi file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 975ea57b23913321e21acd431ed739810a414f6d
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 15:19:47 2020 +0200
+
+    luotiin hakemisto tiedostoja ja tiedostot file1 file2 ja file3
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2dffcf5b56b10b689ccf800e98f6d105b997cd5e
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 15:12:15 2020 +0200
+
+    tehtiin lisäyksiä ja poistoja tiedostoissa eka.txt ja kolmas.txt
+
+ eka.txt    | 4 +++-
+ kolmas.txt | 1 +
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+commit c122a3562efe4621b8d608f330d0cb5433e219c5
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 15:08:57 2020 +0200
+
+    muutettiin tiedosto.txt nimeksi eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b782ebae7e49dffc622d5feff362e066bc682685
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 15:07:14 2020 +0200
+
+    poistettiin toinen.txt
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9219b37aaed083c1ba8349be9eefd2a2a508cfd6
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 15:04:51 2020 +0200
+
+    poistettiin ja lisättiin tekstiä
+
+ tiedosto.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 0cef8f71a69dccb6f5c7418a2f90efd8086e1197
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 15:02:15 2020 +0200
+
+    lisättiin paljon tekstiä
+
+ tiedosto.txt | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 5d5a52e160b740ac5ad802c2e016060ba5185771
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 14:57:14 2020 +0200
+
+    luotiin hakemisto stuff ja sen sisälle tiedosto jtiedosto.txt
+
+ stuff/jtiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a62056b31badfc7c53ef7507fbe53f6f53eac0a0
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 14:55:52 2020 +0200
+
+    luotiin kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit cfc09d971ccb5e4e33c05d7aab2f7ad1638d4951
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 14:54:09 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 2 ++
+ toinen.txt   | 0
+ 2 files changed, 2 insertions(+)
+
+commit 81dbf2af5d865168c131b723356bec0f57aee81c
+Author: Iisakki Kulhua <iisakki@kulhua.net>
+Date:   Thu Mar 12 14:50:21 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
