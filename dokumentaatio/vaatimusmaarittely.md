@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-
+Viljankuivurin varastointisovellus.
 
 ## Käyttäjät
 
