@@ -4,7 +4,7 @@
 
 [Dokumentaatio](https://github.com/iisu36/ot-harjoitustyo/tree/master/dokumentaatio)
 
-[Työaikakirjanpinto](https://github.com/iisu36/ot-harjoitustyo/tree/master/tyoaikakirjanpito)
+[Työaikakirjanpinto](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 ## **Tehtavat**
 
