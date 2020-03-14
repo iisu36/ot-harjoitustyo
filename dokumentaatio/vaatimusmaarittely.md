@@ -38,3 +38,10 @@ Kuivurin omistaja.
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa.
+
+- Kuivurin logiikan yhdistäminen sovellukseen
+ - Logiikan seuranta
+ - Viljaelevaattoreiden ja sähköjakajien ohjaaminen manuaalisesti
+ - Automaattisten jakoreittien luominen kohdesiiloon
+ - Vaakasiilojen hallinta
+ - Kuivaustoimintojen seuranta ja hallinta
