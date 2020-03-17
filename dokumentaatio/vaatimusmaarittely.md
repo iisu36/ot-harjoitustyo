@@ -25,6 +25,7 @@ Kuivurin omistaja.
 - Lisäys
 - Lajittelu
 - Tulosteet
+- Haettaessa tietoja siilojen korostus kartassa hakuehtojen mukaisesti
 
 ## Perusversion (+ Jatkokehitys) tarjoama toiminnallisuus
 
