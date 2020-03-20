@@ -5,78 +5,78 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="silo.SecondaryController">
     <columnConstraints>
-        <ColumnConstraints prefWidth="60.0" />
-        <ColumnConstraints prefWidth="60.0" />
-        <ColumnConstraints prefWidth="60.0" />
-        <ColumnConstraints prefWidth="60.0" />
-        <ColumnConstraints prefWidth="60.0" />
-        <ColumnConstraints prefWidth="60.0" />        
+        <ColumnConstraints prefWidth="75" />
+        <ColumnConstraints prefWidth="75.0" />
+        <ColumnConstraints prefWidth="75.0" />
+        <ColumnConstraints prefWidth="75.0" />
+        <ColumnConstraints prefWidth="75.0" />
+        <ColumnConstraints prefWidth="75.0" />        
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
-        <RowConstraints prefHeight="60.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
+        <RowConstraints prefHeight="75.0" />
     </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 2" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 3" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 4" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 5" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 6" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 7" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 10" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 11" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 12" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 13" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 14" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 15" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 16" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 17" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 18" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 19" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 20" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 23" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 24" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 25" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 26" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 27" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 28" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 29" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 30" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 31" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 32" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 33&#10;     V1" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 34" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 35" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 36" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 37&#10;    V2" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 38" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 39" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 40&#10;    V3" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 41" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 42" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 43" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 44" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 45" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 46" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 47" GridPane.columnIndex="0" GridPane.rowIndex="9" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 48" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 49" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 50" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 51" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 52" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-      <Button layoutX="250.0" layoutY="190.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Siilo 21" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button fx:id="siilo1" mnemonicParsing="false" onMouseMoved="#mouseOn" prefHeight="75.0" prefWidth="75.0" text="1" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <Button fx:id="siilo2" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="2" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <Button fx:id="siilo3" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="3" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+      <Button fx:id="siilo4" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="4" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+      <Button fx:id="siilo5" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="5" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+      <Button fx:id="siilo6" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="6" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+      <Button fx:id="siilo7" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="7" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <Button fx:id="siilo8" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="siilo9" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="9" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button fx:id="siilo10" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="10" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Button fx:id="siilo11" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="11" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <Button fx:id="siilo12" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="12" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <Button fx:id="siilo13" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="13" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <Button fx:id="siilo14" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="14" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button fx:id="siilo15" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="15" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button fx:id="siilo16" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="16" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Button fx:id="siilo17" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="17" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <Button fx:id="siilo18" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="18" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+      <Button fx:id="siilo19" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="19" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <Button fx:id="siilo20" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="20" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button fx:id="siilo21" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="21" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button fx:id="siilo23" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="23" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <Button fx:id="siilo24" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="24" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+      <Button fx:id="siilo25" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="25" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+      <Button fx:id="siilo26" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="26" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="siilo27" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="27" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button fx:id="siilo28" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="28" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button fx:id="siilo29" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="29" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+      <Button fx:id="siilo30" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="30" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <Button fx:id="siilo31" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="31" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      <Button fx:id="siilo32" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="32" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Button fx:id="siilo33" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="33&#10;V1" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Button fx:id="siilo34" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="34" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+      <Button fx:id="siilo35" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="35" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+      <Button fx:id="siilo36" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="36" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button fx:id="siilo37" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="37&#10;V2" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Button fx:id="siilo38" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="38" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+      <Button fx:id="siilo39" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="39" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Button fx:id="siilo40" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="40&#10;V3" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <Button fx:id="siilo41" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="41" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+      <Button fx:id="siilo42" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="42" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <Button fx:id="siilo43" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="43" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <Button fx:id="siilo44" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="44" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+      <Button fx:id="siilo45" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="45" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+      <Button fx:id="siilo46" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="46" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+      <Button fx:id="siilo47" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="47" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+      <Button fx:id="siilo48" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="48" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+      <Button fx:id="siilo49" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="49" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+      <Button fx:id="siilo50" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="50" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+      <Button fx:id="siilo51" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="51" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+      <Button fx:id="siilo52" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="52" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="9" />      
    </children>
 </GridPane>
