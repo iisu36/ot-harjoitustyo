@@ -26,6 +26,7 @@ Kuivurin omistaja.
 - Lajittelu
 - Tulosteet
 - Haettaessa tietoja siilojen korostus kartassa hakuehtojen mukaisesti
+- Siilojen väritys ilmaisee varastokapasiteetin (valkoinen vapaa - vihreästä liukuväri punaiseen - täynnä)
 
 ## Perusversion (+ Jatkokehitys) tarjoama toiminnallisuus
 
