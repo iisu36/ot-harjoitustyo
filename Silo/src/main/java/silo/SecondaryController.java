@@ -12,6 +12,6 @@ public class SecondaryController {
     
     @FXML
     protected void mouseOn(ActionEvent event) throws IOException {
-        mouseOn.toFront();
+        
     }
 }
