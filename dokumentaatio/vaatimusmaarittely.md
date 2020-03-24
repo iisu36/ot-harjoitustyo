@@ -43,9 +43,9 @@ Perusversion jälkeen järjestelmää täydennetään ajan salliessa.
 
 - "Siilokartan" luominen kuivurikohtaisesti
 - Kuivurin logiikan yhdistäminen sovellukseen
--- Logiikan seuranta
--- Viljaelevaattoreiden ja sähköjakajien ohjaaminen manuaalisesti
--- Automaattisten jakoreittien luominen kohdesiiloon
--- Vaakasiilojen hallinta
--- Kuivaustoimintojen seuranta ja hallinta
+    - Logiikan seuranta
+    - Viljaelevaattoreiden ja sähköjakajien ohjaaminen manuaalisesti
+    - Automaattisten jakoreittien luominen kohdesiiloon
+    - Vaakasiilojen hallinta
+    - Kuivaustoimintojen seuranta ja hallinta
 
