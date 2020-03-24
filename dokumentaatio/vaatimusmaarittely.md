@@ -28,24 +28,24 @@ Kuivurin omistaja.
 - Haettaessa tietoja siilojen korostus kartassa hakuehtojen mukaisesti
 - Siilojen väritys ilmaisee varastokapasiteetin (valkoinen vapaa - vihreästä liukuväri punaiseen - täynnä)
 
-## Perusversion (+ Jatkokehitys) tarjoama toiminnallisuus
+## Perusversion tarjoama toiminnallisuus
 
 - Siilo- ja asiakaskohtaisten tietojen syöttäminen ja hakeminen
 - Vaadittujen tietojen ryhmittäminen
 - Aikaan sidotun varastotilanteen tulostaminen
 - Syötteiden jäljitettävyys
 - Siilohistoria (esim. VAIN luomu- tai lajikesiilot)
-- "Siilokartan" luominen kuivurikohtaisesti
 - Viljapassin tulostus
 
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa.
 
+- "Siilokartan" luominen kuivurikohtaisesti
 - Kuivurin logiikan yhdistäminen sovellukseen
-- Logiikan seuranta
-- Viljaelevaattoreiden ja sähköjakajien ohjaaminen manuaalisesti
-- Automaattisten jakoreittien luominen kohdesiiloon
-- Vaakasiilojen hallinta
-- Kuivaustoimintojen seuranta ja hallinta
+-- Logiikan seuranta
+-- Viljaelevaattoreiden ja sähköjakajien ohjaaminen manuaalisesti
+-- Automaattisten jakoreittien luominen kohdesiiloon
+-- Vaakasiilojen hallinta
+-- Kuivaustoimintojen seuranta ja hallinta
 
