@@ -16,7 +16,7 @@
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely]https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
