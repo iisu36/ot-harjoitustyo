@@ -14,9 +14,15 @@
 
 # **Harjoitustyö**
 
-[Dokumentaatio](https://github.com/iisu36/ot-harjoitustyo/tree/master/dokumentaatio)
+## Dokumentaatio
+
+[Vaatimusmäärittely]https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+
+## Releaset
+
+[Viikko 3](https://github.com/iisu36/ot-harjoitustyo/tree/master/Silo)
 
 ## Komentorivitoiminnot
 
