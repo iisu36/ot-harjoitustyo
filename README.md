@@ -12,7 +12,7 @@
 
 [4 HSL](https://github.com/iisu36/ot-harjoitustyo/blob/master/laskarit/viikko3/4hsl.png)
 
-# **Harjoitustyö**
+# **Harjoitustyö - _Silo_**
 
 ## Dokumentaatio
 <!--[Käyttöohje](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)-->
