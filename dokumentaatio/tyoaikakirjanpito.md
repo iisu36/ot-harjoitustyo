@@ -7,3 +7,5 @@
 | 2 | 19.03 |  5   | javafxml tutustumista ja harjoittelua |
 | 2 | 20.03 |  5   | javafxml tutustumista ja harjoittelua |
 | 3 | 24.03 |  2   | javafxml tutustumista ja harjoittelua |
+| 3 | 27.03 |  4   | käyttöliittymän tekemistä |
+| 3 | 28.03 |  6   | käyttöliittymän tekemistä |
