@@ -15,9 +15,11 @@
 # **Harjoitustyö**
 
 ## Dokumentaatio
+<!--[Käyttöohje](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)-->
 
 [Vaatimusmäärittely](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-
+<!--[Arkkitehtuurikuvaus](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuurikuvaus.md)
+[Testausdokumentti](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)-->
 [Työaikakirjanpito](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 ## Releaset
