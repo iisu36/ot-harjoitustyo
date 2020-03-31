@@ -9,3 +9,4 @@
 | 3 | 24.03 |  2   | javafxml tutustumista ja harjoittelua |
 | 3 | 27.03 |  4   | käyttöliittymän tekemistä |
 | 3 | 28.03 |  6   | käyttöliittymän tekemistä |
+| 4 | 31.03 |  4   | käyttöliittymän ja sen toiminnalisuuden tekemistä |
