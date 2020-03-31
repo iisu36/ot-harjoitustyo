@@ -15,7 +15,7 @@
 # **Harjoitustyö - _Silo_**
 
 ## Dokumentaatio
-<!--[Käyttöohje](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)-->
+[Käyttöohje](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 [Vaatimusmäärittely](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 <!--[Arkkitehtuurikuvaus](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuurikuvaus.md)
