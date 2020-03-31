@@ -19,3 +19,7 @@
 [Testikattavuus](https://github.com/iisu36/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.jpg)
 
 ### Viikko 3
+
+[1 Monopoli](https://github.com/iisu36/ot-harjoitustyo/blob/master/laskarit/viikko3/1monopoli.jpg)
+
+[2 Monopoli](https://github.com/iisu36/ot-harjoitustyo/blob/master/laskarit/viikko3/2monopoli.jpg)
