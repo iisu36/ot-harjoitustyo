@@ -10,3 +10,5 @@
 | 3 | 27.03 |  4   | käyttöliittymän tekemistä |
 | 3 | 28.03 |  6   | käyttöliittymän tekemistä |
 | 4 | 31.03 |  6   | käyttöliittymän ja sen toiminnalisuuden tekemistä, testin teko, muuta hienosäätöä |
+| 4 | 01.04 |  6   | käyttöliittymän tekemistä ja sen toiminnalisuuden tekemistä, uusia luokkia|
+| 4 | 02.04 |  6   | käyttöliittymän tekemistä ja muuta hienosäätöä|
