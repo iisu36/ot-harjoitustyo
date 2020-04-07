@@ -8,6 +8,9 @@ package silo.dao;
 import silo.domain.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import silo.domain.Silo;
+import static silo.ui.MainViewController.siloList;
 
 /**
  *
@@ -15,22 +18,22 @@ import java.sql.*;
  */
 public class UserDao {
 
-    private static String URL = "jdbc:sqlite:testsql.db";
+    private static String url = "jdbc:sqlite:testsql.db";
     private static Connection db = createConnection();
 
     public UserDao() {
         this.db = db;
-        this.URL = URL;
+        this.url = url;
     }
 
-    public UserDao(String URL) {
-        this.URL = URL; //TESTEJÄ VARTEN, ETTEI OIKEA TIETOKANTA SEKOTU
+    public UserDao(String url) {
+        this.url = url;
         this.db = db;
     }
 
     private static Connection createConnection() {
         try {
-            return DriverManager.getConnection(URL);
+            return DriverManager.getConnection(url);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -49,7 +52,7 @@ public class UserDao {
 
         Statement s = db.createStatement();
 
-        s.execute("CREATE TABLE IF NOT EXISTS Users (user_id INTEGER PRIMARY KEY, username TEXT unique, password TEXT)");
+        s.execute("CREATE TABLE IF NOT EXISTS Users (user_id INTEGER PRIMARY KEY, username TEXT UNIQUE, password TEXT)");
 
         s.close();
 
@@ -73,11 +76,6 @@ public class UserDao {
         s.close();
     }
 
-    public User read(Integer key) throws SQLException {
-
-        return null;
-    }
-
     public User findUser(String username) throws SQLException {
 
         createTable();
@@ -98,21 +96,24 @@ public class UserDao {
         return pp;
     }
 
-    public User update(User user) throws SQLException {
-        return null;
-    }
+    public ArrayList<String> list() throws SQLException {
+        
+        ArrayList list = new ArrayList<Silo>();
+        
+        PreparedStatement stmt = db.prepareStatement("SELECT username FROM Users");
 
-    public void list() throws SQLException {
-        
-        Statement stmt = db.createStatement();
-        
-        ResultSet rs = stmt.executeQuery("SELECT username, password FROM Users");
-        
-        
-        
-        while (rs.next()) {
-            System.out.println(rs.getString("username") + " " + rs.getString("password"));
+        ResultSet rs = stmt.executeQuery();
+
+        if (!rs.next()) {
+            return null;
+        } else {
+            list.add(rs.getString("username"));
         }
+
+        stmt.close();
+        rs.close();
+
+        return list;
         
     }
 

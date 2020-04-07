@@ -17,7 +17,6 @@ public class Client {
     private String name;
     private String address;
     private String phone;
-    private String billing;
     private ArrayList<Grain> grainList;
     private ArrayList<Silo> siloList;
 
@@ -27,7 +26,6 @@ public class Client {
         grainList = new ArrayList<>();
         siloList = new ArrayList<>();
         this.address = "";
-        this.billing = "";
         this.phone = "";
     }
     
@@ -47,38 +45,6 @@ public class Client {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getBilling() {
-        return billing;
-    }
-
-    public void setBilling(String billing) {
-        this.billing = billing;
-    }
-
-    public ArrayList<Grain> getGrainList() {
-        return grainList;
-    }
-
-    public void setGrainList(ArrayList<Grain> grainList) {
-        this.grainList = grainList;
-    }
-
     public ArrayList<Silo> getSiloList() {
         return siloList;
     }
@@ -89,6 +55,6 @@ public class Client {
 
     @Override
     public String toString() {
-        return name + " " + phone + " " + address;
+        return name;
     }
 }

@@ -63,8 +63,8 @@
                 <version>0.8.5</version>
                 <configuration>
                     <excludes>
-                        <exclude>silo/*</exclude>
                         <exclude>silo/ui/*</exclude>
+                        <exclude>silo/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

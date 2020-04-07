@@ -23,8 +23,6 @@ public class Silo {
     private Button button;
     private Client client;
     private Grain grain;
-    private Grain prefGrain;
-    private int maxvolume;
     private Label label;
 
     public Silo() {
@@ -54,14 +52,6 @@ public class Silo {
         this.button.setPadding(Insets.EMPTY);
     }
 
-    public ArrayList<String> getHistory() {
-        return history;
-    }
-
-    public void setHistory(ArrayList<String> history) {
-        this.history = history;
-    }
-
     public Button getButton() {
         return button;
     }
@@ -85,22 +75,6 @@ public class Silo {
 
     public void setGrain(Grain grain) {
         this.grain = grain;
-    }
-
-    public Grain getPrefGrain() {
-        return prefGrain;
-    }
-
-    public void setPrefGrain(Grain prefGrain) {
-        this.prefGrain = prefGrain;
-    }
-
-    public int getMaxvolume() {
-        return maxvolume;
-    }
-
-    public void setMaxvolume(int maxvolume) {
-        this.maxvolume = maxvolume;
     }
 
     @Override

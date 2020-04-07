@@ -19,11 +19,11 @@ public class SiloTest {
 
     @Before
     public void setUp() {
-        client1 = new Client("");
+        client1 = new Client("Mikko Mallikas");
     }
 
-//    @Test
-//    public void testToString() {
-//        assertEquals("A: B (C) D hl E %", client1.toString());
-//    }
+    @Test
+    public void testToString() {
+        assertEquals("Mikko Mallikas", client1.toString());
+    }
 }
