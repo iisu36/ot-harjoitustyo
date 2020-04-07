@@ -1,12 +1,11 @@
-Ensimmäisessä ikkunassa syötetään halutut siilokartan parametrit.
+Ensimmäisenä aukeaa sisäänkirjautumisikkuna. Jos ei ole vielä tunnusta, luodaan uusi painamalla "Create new user" ja siirrytään luomaan uutta käyttäjää samankaltaiseen ikkunaan. Käyttäjällä on tunnus ja salasana. Kun tunnus on luotu, siirrytään takaisin kirjautumisikkunaan ja kirjaudutaan sisään.
 
-Toisessa ikkunassa näkyy juuri luotu siilokartta oikealla. Ylhäällä vasemmalla napit Add, Remove ja Change sekä näiden 
-alapuolella tietojen syöttämistä varten olevat kentät. Näiden alapuolella kaksi välilehteä, Information ja Clients. Information näyttää 
-valitun siilon tiedot ja Clients kaikki asiakkaat.
+Jos luotiin uusi käyttäjä, siirrytään sisäänkirjauduttaessa luomaan siilokarttaa uudessa ikkunassa. Syötetään kenttiin halutut parametrit ja painetaan "create".
 
-Tietoja voi lisätä siilolle täyttämällä tiedot, valitsemalla siilon painamalla sitä hiirellä ja sen jälkeen painamalla 
-Add-nappia. Tietojen muuttaminen toimii samoin Change napilla. Remove-nappi toimii myös samoin, mutta tietoja ei tarvitse 
-täyttää. Lisäksi remove-nappia painamalla poistuu ensin mahdolliset tiedot kyseiseltä siilolta. Kun siilolla ei ole tietoja, 
-poistuu se itse kartalta. 
+Ikkunaa aukeaa päänäkymä, jossa näkyy oikealla luotu siilokartta, jossa jokainen siilo on numeroitu. Vasemmalla näkyy infopalkki "Information", johon ilmestyy siiloa klikkaamalla kyseisen siilon tiedot, ja "Clients", joka näyttää kaikki tämänhetkiset asiakkaat. Vasemmassa ylälaidassa on "remove" nappi, joka toimii ensin valitsemalla haluttu siilo ja sen jälkeen painamalla "remove" nappia, jolloin siilon tiedot nollaantuvat.
 
-Siilon tiedot tulevat näkyviin viemällä hiiri siilon päälle tai painamalla siiloa hiirellä.
+Kun siilossa ei ole tietoja, sitä painamalla aukeaa ikkuna, jossa voi syöttää siilolle halutut tiedot. "Volume" kohta hyväksyy vain numeroita. 
+
+Kun siilo on luotu, tulee kyseisen siilon kohdalle karttaan siilon näkyviin asiakas, viljalaji ja määrä. Siilon väritys vaihtuu tyhjästä täyteen, vihreästä punaiseen, määrän mukaan. 
+
+Tiedot tallentuvat tietokantaan ja seuraavan kerran sisäänkirjauduttaessa luotu siilokartta palautuu tietoineen.
