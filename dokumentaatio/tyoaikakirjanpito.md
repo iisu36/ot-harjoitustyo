@@ -1,4 +1,4 @@
-# työaikakirjanpito
+# Työaikakirjanpito
 
 | viikko | päivä | aika | mitä tein  |
 | :----: | :----:|:----:| :-----|
@@ -12,3 +12,7 @@
 | 4 | 31.03 |  6   | käyttöliittymän ja sen toiminnalisuuden tekemistä, testin teko, muuta hienosäätöä |
 | 4 | 01.04 |  6   | käyttöliittymän tekemistä ja sen toiminnalisuuden tekemistä, uusia luokkia|
 | 4 | 02.04 |  6   | käyttöliittymän tekemistä ja muuta hienosäätöä|
+| 4 | 03.04 |  6   | tietokantojen ja uusien luokkien tekemistä|
+| 4 | 04.04 |  4   | tietokantojen ja uusien luokkien tekemistä|
+| 4 | 05.04 |  4   | tietokantojen ja uusien luokkien sovittamista käyttöliittymän kanssa|
+|  |**yhteensä**|  **57**  |  
