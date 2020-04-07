@@ -13,7 +13,7 @@
 
 ## Releaset
 
-[Viikko 4](https://github.com/iisu36/ot-harjoitustyo/tree/master/Silo)
+[Viikko 4](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko4)
 
 ## Komentorivitoiminnot
 
