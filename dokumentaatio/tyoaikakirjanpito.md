@@ -15,5 +15,5 @@
 | 4 | 03.04 |  6   | tietokantojen ja uusien luokkien tekemistä|
 | 4 | 04.04 |  4   | tietokantojen ja uusien luokkien tekemistä|
 | 4 | 05.04 |  4   | tietokantojen ja uusien luokkien sovittamista käyttöliittymän kanssa|
-| 4 | 06.04 |  4   | checkstylen käyttöottoa ja testausta|
+| 4 | 07.04 |  4   | checkstylen käyttöottoa ja testausta|
 |  |**yhteensä**|  **61**  |  
