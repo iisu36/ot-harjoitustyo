@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="silo.PrimaryController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="silo.ui.CreateMapController">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Luo siilokartta" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="25.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create your Silomap" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="25.0">
          <font>
             <Font name="Tahoma Bold" size="23.0" />
          </font>
@@ -21,23 +21,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="26.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Siilorivejä:" wrappingWidth="106.22900390625">
-                     <HBox.margin>
-                        <Insets left="50.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Tahoma" size="16.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="rows" />
-               </children>
-               <padding>
-                  <Insets right="50.0" top="25.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Siiloja rivillä:" wrappingWidth="106.22900390625">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Columns:" wrappingWidth="106.22900390625">
                      <HBox.margin>
                         <Insets left="50.0" />
                      </HBox.margin>
@@ -48,6 +32,22 @@
                   <TextField fx:id="columns" />
                </children>
                <padding>
+                  <Insets right="50.0" top="25.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rows:" wrappingWidth="106.22900390625">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Tahoma" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="rows" />
+               </children>
+               <padding>
                   <Insets right="50.0" top="5.0" />
                </padding>
                <VBox.margin>
@@ -56,7 +56,7 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" layoutX="10.0" layoutY="37.0">
                <children>
-                  <Button fx:id="mapbutton" defaultButton="true" mnemonicParsing="false" onAction="#switchToSecondary" text="Luo kartta" textAlignment="CENTER" />
+                  <Button fx:id="mapbutton" defaultButton="true" mnemonicParsing="false" onAction="#switchToMainView" text="Create" textAlignment="CENTER" />
                </children>
                <padding>
                   <Insets bottom="50.0" right="50.0" top="5.0" />

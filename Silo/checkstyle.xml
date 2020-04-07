@@ -6,13 +6,9 @@
     <property name="localeCountry" value="EN"/>
     <property name="localeLanguage" value="en"/>
     
-    <module name="BeforeExecutionExclusionFileFilter">
-        <property name="fileNamePattern" value="module\-info\.java$"/>
-    </module>
 
     <module name='TreeWalker'>
         
-        <property name="cacheFile" value="target/cachefile" />
 
         <property name='tabWidth' value='4' />
 
@@ -89,6 +85,10 @@
 
     <module name='FileLength'>
         <property name='max' value='500' />
+    </module>
+    
+    <module name="SuppressionFilter">
+        <property name="file" value="skipped_files.xml" />
     </module>
 
 

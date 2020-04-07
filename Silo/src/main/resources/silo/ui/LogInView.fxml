@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="silo.ui.LogInViewController">
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Log in" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="25.0">
+            <font>
+                <Font name="Tahoma Bold" size="23.0" />
+            </font>
+        </Text>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="26.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="106.22900390625">
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Tahoma" size="16.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="userNameField" />
+                    </children>
+                    <padding>
+                        <Insets right="50.0" top="25.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="106.22900390625">
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Tahoma" size="16.0" />
+                            </font>
+                        </Text>
+                        <PasswordField fx:id="passWordField" />
+                    </children>
+                    <padding>
+                        <Insets right="50.0" top="5.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" layoutX="10.0" layoutY="37.0">
+                    <children>
+                        <Button fx:id="button" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleLogIn" text="Log in" textAlignment="CENTER">
+                            <HBox.margin>
+                                <Insets left="100.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="50.0" right="50.0" top="5.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+        <Button layoutX="368.0" layoutY="25.0" mnemonicParsing="false" text="Create new user" onAction="#handleNewUser" />
+        <Label fx:id="error" layoutX="368.0" layoutY="142.0" />
+    </children>
+</AnchorPane>

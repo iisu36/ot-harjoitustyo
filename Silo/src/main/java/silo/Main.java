@@ -5,12 +5,13 @@
  */
 package silo;
 
+import silo.ui.*;
 /**
  *
  * @author Iizu
  */
 public class Main {
     public static void main(String[] args) {
-        App.main(args);
+        SiloUi.main(args);
     }
 }
