@@ -64,7 +64,7 @@
                 <configuration>
                     <excludes>
                         <exclude>silo/ui/*</exclude>
-                        <exclude>silo/*</exclude>
+                        <exclude>silo/Main.java</exclude>
                     </excludes>
                 </configuration>
                 <executions>
