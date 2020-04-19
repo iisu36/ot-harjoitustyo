@@ -7,13 +7,12 @@ package silo.domain;
 
 import java.util.ArrayList;
 
-
 /**
  *
  * @author Iizu
  */
 public class Client {
-    
+
     private String name;
     private String address;
     private String phone;
@@ -21,18 +20,18 @@ public class Client {
     private ArrayList<Silo> siloList;
 
     public Client(String name) {
-    
+
         this.name = name;
         grainList = new ArrayList<>();
         siloList = new ArrayList<>();
         this.address = "";
         this.phone = "";
     }
-    
+
     public void addSilo(Silo silo) {
         this.siloList.add(silo);
     }
-    
+
     public void addGrain(Grain grain) {
         this.grainList.add(grain);
     }
@@ -51,6 +50,22 @@ public class Client {
 
     public void setSiloList(ArrayList<Silo> siloList) {
         this.siloList = siloList;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
