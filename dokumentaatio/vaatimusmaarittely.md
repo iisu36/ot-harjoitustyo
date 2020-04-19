@@ -18,7 +18,7 @@ Sovellukseen voidaan tallettaa ja sieltä saadaan helposti ja nopeasti tietoja:
 
 ## Asiakkaat
 
-- [x] Nimi [x]
+- [x] Nimi
 - [ ] Osoite
 - [ ] Puhelinnumero
 - [ ] Mahdolliset laskutustiedot
