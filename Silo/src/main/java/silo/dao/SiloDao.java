@@ -173,20 +173,6 @@ public class SiloDao {
         return list;
     }
 
-//    public String list() throws SQLException {
-//
-//        Statement stmt = db.createStatement();
-//
-//        ResultSet rs = stmt.executeQuery("SELECT client FROM Silos WHERE user = '" + user.getName() + "' AND client != ''");
-//
-//        String string = rs.getString("client");
-//
-//        stmt.close();
-//        rs.close();
-//
-//        return string;
-//    }
-
     public boolean hasMap() {
 
         Statement stmt;

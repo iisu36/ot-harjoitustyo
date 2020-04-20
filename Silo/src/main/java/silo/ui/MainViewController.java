@@ -15,8 +15,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.TreeTableView;
+import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import silo.dao.ClientDao;
@@ -34,10 +39,15 @@ public class MainViewController {
     public TextField volume;
     public TextField productionMethod;
     public Text info;
-    public Text clients;
+    public TreeTableView<Client> clientTable;
+    public TreeTableColumn<Client, String> clientColumn;
+    public TreeTableColumn<Client, String> siloColumn;
 
     @FXML
     public GridPane siloGrid;
+    @FXML 
+    public VBox box;
+
     public static ArrayList<Client> clientList;
     public static Button source;
     public Button hover;
@@ -149,7 +159,7 @@ public class MainViewController {
 
             silo.getLabel().setText("");
             silo.getLabel().setStyle("");
-            
+
             siloDao.remove(silo);
 
         } else {
@@ -162,10 +172,21 @@ public class MainViewController {
     }
 
     @FXML
-    public void list() throws SQLException {
-
-        clients.setText(clientDao.list());
+    public void createClientTree() throws SQLException {
         
+        clientColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
+        siloColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
+        
+        clientTable.setShowRoot(true);
+        
+        TreeItem<Client> treeSilo = new TreeItem<>(new Client("Asiakas"));
+        
+        TreeItem<Client> treeClient = new TreeItem<>(new Client("Silo"));
+        treeClient.setExpanded(true);
+        
+        treeClient.getChildren().setAll(treeSilo);
+        
+        clientTable.setRoot(treeClient);
     }
 
     @FXML
@@ -186,17 +207,17 @@ public class MainViewController {
 
         }
     }
-    
+
     public static boolean isNewClient(Client client) {
-        
+
         for (Client current : clientList) {
-            
+
             if (current.getName().equals(client.getName())) {
-                
+
                 return false;
             }
         }
-        
+
         return true;
     }
 }
