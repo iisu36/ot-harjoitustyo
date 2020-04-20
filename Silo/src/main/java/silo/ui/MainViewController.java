@@ -189,18 +189,14 @@ public class MainViewController {
     
     public static boolean isNewClient(Client client) {
         
-        boolean isNew = true;
-        
         for (Client current : clientList) {
             
             if (current.getName().equals(client.getName())) {
                 
-                isNew = false;
-                
-                return isNew;
+                return false;
             }
         }
         
-        return isNew;
+        return true;
     }
 }

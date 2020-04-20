@@ -6,14 +6,9 @@
 package silo.dao;
 
 import java.sql.*;
-import java.util.ArrayList;
 import silo.domain.Client;
-import silo.domain.Grain;
-
-import silo.domain.Silo;
 import silo.domain.User;
 import silo.ui.LogInViewController;
-import static silo.ui.MainViewController.siloList;
 
 /**
  *
