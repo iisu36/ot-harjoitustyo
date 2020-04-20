@@ -16,4 +16,6 @@
 | 4 | 04.04 |  4   | tietokantojen ja uusien luokkien tekemistä|
 | 4 | 05.04 |  4   | tietokantojen ja uusien luokkien sovittamista käyttöliittymän kanssa|
 | 4 | 07.04 |  4   | checkstylen käyttöottoa ja testausta|
-|  |**yhteensä**|  **61**  |  
+| 5 | 19.04 |  6   | uusi tietokanta |
+| 5 | 20.04 |  6   | treetableview asiakkaille |
+|  |**yhteensä**|  **73**  |  
