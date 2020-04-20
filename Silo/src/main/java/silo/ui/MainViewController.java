@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import silo.dao.ClientDao;
 import static silo.ui.SiloUi.loadFXML;
 
 public class MainViewController {
@@ -37,13 +38,14 @@ public class MainViewController {
 
     @FXML
     public GridPane siloGrid;
-    public ArrayList<Client> clientList;
+    public static ArrayList<Client> clientList;
     public static Button source;
     public Button hover;
     public Client client;
     public Silo silo;
     public Grain grain;
     public SiloDao siloDao;
+    public ClientDao clientDao;
 
     @FXML
     public void initialize() throws SQLException {
@@ -53,6 +55,7 @@ public class MainViewController {
         siloMap = new HashMap<>();
         siloLabelMap = new HashMap<>();
         siloDao = new SiloDao();
+        clientDao = new ClientDao();
 
         int rows = siloDao.getRows();
         int columns = siloDao.getColumns();
@@ -130,8 +133,6 @@ public class MainViewController {
                 stage.show();
             } catch (IOException eh) {
             }
-
-            clientList.set(silo.getIndex() - 1, silo.getClient());
         }
     }
 
@@ -163,7 +164,7 @@ public class MainViewController {
     @FXML
     public void list() throws SQLException {
 
-        clients.setText(siloDao.list());
+        clients.setText(clientDao.list());
         
     }
 
@@ -184,5 +185,22 @@ public class MainViewController {
                     + "-fx-font: 58 Tahoma; -fx-font-weight: bold; ");
 
         }
+    }
+    
+    public static boolean isNewClient(Client client) {
+        
+        boolean isNew = true;
+        
+        for (Client current : clientList) {
+            
+            if (current.getName().equals(client.getName())) {
+                
+                isNew = false;
+                
+                return isNew;
+            }
+        }
+        
+        return isNew;
     }
 }

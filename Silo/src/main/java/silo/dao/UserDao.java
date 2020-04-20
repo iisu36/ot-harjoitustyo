@@ -18,7 +18,7 @@ import static silo.ui.MainViewController.siloList;
  */
 public class UserDao {
 
-    private static String url = "jdbc:sqlite:testsql.db";
+    private static String url = "jdbc:sqlite:users.db";
     private static Connection db = createConnection();
 
     public UserDao() {

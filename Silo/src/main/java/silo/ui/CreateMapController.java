@@ -1,6 +1,7 @@
 package silo.ui;
 
 import silo.dao.SiloDao;
+import silo.dao.ClientDao;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ public class CreateMapController {
     public static int column;
 
     public SiloDao siloDao;
+    public ClientDao clientDao;
 
     @FXML
     public TextField rows;
@@ -28,8 +30,10 @@ public class CreateMapController {
             this.row = Integer.parseInt(rows.getText());
 
             siloDao = new SiloDao();
-
             siloDao.createTable(column, row);
+            
+            clientDao = new ClientDao();
+            clientDao.createTable();
 
             SiloUi.setRoot("MainView");
         }

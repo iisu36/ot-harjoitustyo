@@ -10,7 +10,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 import silo.dao.SiloDao;
+import silo.dao.ClientDao;
+
 import silo.domain.Client;
 import silo.domain.Grain;
 import silo.domain.Silo;
@@ -48,12 +51,21 @@ public class SiloViewController {
         client.addSilo(silo);
 
         MainViewController.showInfo(silo);
-        
-        
+
         SiloDao siloDao = new SiloDao();
         siloDao.create(silo);
 
+        if (MainViewController.isNewClient(client)) {
+
+            ClientDao clientDao = new ClientDao();
+            clientDao.create(client);
+        }
+
+        MainViewController.clientList.set(silo.getIndex() - 1, silo.getClient());
+
         Stage stage = (Stage) createButton.getScene().getWindow();
         stage.close();
+        
+        
     }
 }

@@ -46,7 +46,7 @@
                                 </VBox>
                             </content>
                         </Tab>
-                        <Tab text="Clients">
+                        <Tab onSelectionChanged="#list" text="Clients">
                             <content>
                                 <ScrollPane>
                                     <content>
