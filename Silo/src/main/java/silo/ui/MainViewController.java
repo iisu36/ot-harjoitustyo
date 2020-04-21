@@ -175,13 +175,13 @@ public class MainViewController {
     public void createClientTree() throws SQLException {
         
         clientColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
-        siloColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
+        siloColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("phone"));
         
         clientTable.setShowRoot(true);
         
-        TreeItem<Client> treeSilo = new TreeItem<>(new Client("Asiakas"));
+        TreeItem<Client> treeSilo = new TreeItem<>(new Client("Silo"));
         
-        TreeItem<Client> treeClient = new TreeItem<>(new Client("Silo"));
+        TreeItem<Client> treeClient = new TreeItem<>(new Client("Asiakas"));
         treeClient.setExpanded(true);
         
         treeClient.getChildren().setAll(treeSilo);
