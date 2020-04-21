@@ -35,6 +35,13 @@ public class SiloDao {
 
         this.user = LogInViewController.user;
     }
+    
+    public SiloDao(User user) {
+        this.url = "jdbc:sqlite:silos.db";
+        this.db = createConnection();
+
+        this.user = user;
+    }
 
     private Connection createConnection() {
         try {

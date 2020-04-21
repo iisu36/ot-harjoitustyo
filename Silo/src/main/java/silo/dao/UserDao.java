@@ -80,7 +80,7 @@ public class UserDao {
 
         createTable();
 
-        PreparedStatement stmt = db.prepareStatement("SELECT * FROM Users WHERE username =?");
+        PreparedStatement stmt = db.prepareStatement("SELECT * FROM Users WHERE username = ?");
         stmt.setString(1, username);
         ResultSet rs = stmt.executeQuery();
 
