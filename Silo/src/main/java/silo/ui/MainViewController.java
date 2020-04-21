@@ -11,13 +11,21 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.TreeTableView;
+import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import silo.dao.ClientDao;
 import static silo.ui.SiloUi.loadFXML;
@@ -34,10 +42,15 @@ public class MainViewController {
     public TextField volume;
     public TextField productionMethod;
     public Text info;
-    public Text clients;
+    public TreeTableView<Client> clientTable;
+    public TreeTableColumn<Client, String> clientColumn;
+    public TreeTableColumn<Client, String> siloColumn;
 
     @FXML
     public GridPane siloGrid;
+    @FXML
+    public VBox box;
+
     public static ArrayList<Client> clientList;
     public static Button source;
     public Button hover;
@@ -68,10 +81,19 @@ public class MainViewController {
 
                 Button button = new Button("Silo " + k);
                 button.setMaxSize(75, 75);
-                //button.setMinSize(75, 75);
+                button.setText(String.valueOf(k));
+                button.setStyle("-fx-text-fill: #00000043; "
+                        + " -fx-font: 58 Tahoma; -fx-font-weight: bold; ");
+                button.setPadding(Insets.EMPTY);
                 silo = siloDao.getSilo(row + 1, column + 1);
                 silo.setButton(button);
                 silo.setIndex(k);
+                Label label = new Label("");
+                label.setMaxSize(75, 75);
+                label.setAlignment(Pos.CENTER);
+                label.setTextAlignment(TextAlignment.CENTER);
+                label.setLineSpacing(11);
+                silo.setLabel(label);
                 siloList.add(silo);
                 siloMap.put(button, silo);
                 siloLabelMap.put(silo.getLabel(), silo);
@@ -145,11 +167,11 @@ public class MainViewController {
             clientList.set(silo.getIndex() - 1, new Client(""));
 
             source.setStyle(null);
-            silo.reset();
+            resetSilo(silo, source);
 
             silo.getLabel().setText("");
             silo.getLabel().setStyle("");
-            
+
             siloDao.remove(silo);
 
         } else {
@@ -162,10 +184,21 @@ public class MainViewController {
     }
 
     @FXML
-    public void list() throws SQLException {
+    public void createClientTree() throws SQLException {
 
-        clients.setText(clientDao.list());
-        
+        clientColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
+        siloColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("phone"));
+
+        clientTable.setShowRoot(true);
+
+        TreeItem<Client> treeSilo = new TreeItem<>(new Client("Silo"));
+
+        TreeItem<Client> treeClient = new TreeItem<>(new Client("Asiakas"));
+        treeClient.setExpanded(true);
+
+        treeClient.getChildren().setAll(treeSilo);
+
+        clientTable.setRoot(treeClient);
     }
 
     @FXML
@@ -179,24 +212,73 @@ public class MainViewController {
 
             silo.getLabel().setText(silo.toString());
 
-            silo.setStyle();
+            setSiloStyle(silo);
 
             silo.getButton().setStyle("-fx-opacity: 0.25; -fx-text-fill: black; "
                     + "-fx-font: 58 Tahoma; -fx-font-weight: bold; ");
 
         }
     }
-    
+
     public static boolean isNewClient(Client client) {
-        
+
         for (Client current : clientList) {
-            
+
             if (current.getName().equals(client.getName())) {
-                
+
                 return false;
             }
         }
-        
+
         return true;
+    }
+
+    public void resetSilo(Silo silo, Button button) {
+        silo.setClient(null);
+        silo.setGrain(new Grain());
+
+        button.setText(String.valueOf(silo.getIndex()));
+
+        button.setStyle("-fx-text-fill: #00000043; "
+                + " -fx-font: 58 Tahoma; -fx-font-weight: bold; ");
+        button.setPadding(Insets.EMPTY);
+    }
+
+    public static void setSiloStyle(Silo silo) {
+
+        Grain grain = silo.getGrain();
+
+        if (grain.getVolume() == 0) {
+
+            silo.getButton().setStyle("");
+
+            return;
+        }
+
+        String background = "";
+
+        if (grain.getVolume() < 150) {
+
+            background = "-fx-background-color: greenyellow; ";
+
+        } else if (grain.getVolume() < 200) {
+
+            background = "-fx-background-color: yellowgreen; ";
+
+        } else if (grain.getVolume() < 250) {
+
+            background = "-fx-background-color: yellow; ";
+
+        } else if (grain.getVolume() < 300) {
+
+            background = "-fx-background-color: orange; ";
+
+        } else if (grain.getVolume() <= 350) {
+
+            background = "-fx-background-color: orangered; ";
+
+        }
+
+        silo.getLabel().setStyle(background + " -fx-font: 13 Tahoma; -fx-font-weight: bold; ");
     }
 }

@@ -29,7 +29,7 @@ public class UserDaoTest {
     @Before
     public void setUp() throws Exception {
 
-        connection = DriverManager.getConnection("jdbc:sqlite:testsql.db");
+        connection = DriverManager.getConnection("jdbc:sqlite:users.db");
 
         Statement stmt = connection.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS "

@@ -6,11 +6,8 @@
 package silo.domain;
 
 import java.util.ArrayList;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.text.TextAlignment;
 
 /**
  *
@@ -19,7 +16,7 @@ import javafx.scene.text.TextAlignment;
 public class Silo {
 
     private int index;
-    private ArrayList<String> history;
+    //private ArrayList<String> history;
     private Button button;
     private Client client;
     private Grain grain;
@@ -27,11 +24,10 @@ public class Silo {
 
     public Silo() {
         client = null;
-        this.label = new Label("");
-        this.label.setMaxSize(75, 75);
-        this.label.setAlignment(Pos.CENTER);
-        this.label.setTextAlignment(TextAlignment.CENTER);
-        this.label.setLineSpacing(11);
+    }
+    
+    public void setLabel(Label label) {
+        this.label = label;
     }
 
     public Label getLabel() {
@@ -44,12 +40,6 @@ public class Silo {
 
     public void setIndex(int index) {
         this.index = index;
-        
-        this.button.setText(String.valueOf(index));
-        
-        this.button.setStyle("-fx-text-fill: #00000043; "
-                + " -fx-font: 58 Tahoma; -fx-font-weight: bold; ");
-        this.button.setPadding(Insets.EMPTY);
     }
 
     public Button getButton() {
@@ -58,7 +48,6 @@ public class Silo {
 
     public void setButton(Button button) {
         this.button = button;
-        this.button.setPadding(Insets.EMPTY);
     }
 
     public Client getClient() {
@@ -86,52 +75,5 @@ public class Silo {
         return client.getName() + "\n" + grain.getCrop() + "\n" 
                 + grain.getVariety() + "\n" + grain.getVolume() + " hl\n" 
                 + grain.getProductionMethod();
-    }
-
-    public void reset() {
-        setClient(null);
-        setGrain(new Grain());
-        
-        this.button.setText(String.valueOf(index));
-        
-        this.button.setStyle("-fx-text-fill: #00000043; "
-                + " -fx-font: 58 Tahoma; -fx-font-weight: bold; ");
-        this.button.setPadding(Insets.EMPTY);
-    }
-
-    public void setStyle() {
-        
-        if (this.grain.getVolume() == 0) {
-            
-            this.button.setStyle("");
-            
-            return;
-        }
-        
-        String background = "";
-            
-        if (this.grain.getVolume() < 150) {
-            
-            background = "-fx-background-color: greenyellow; ";
-            
-        } else if (this.grain.getVolume() < 200) {
-            
-            background = "-fx-background-color: yellowgreen; ";
-            
-        } else if (this.grain.getVolume() < 250) {
-            
-            background = "-fx-background-color: yellow; ";
-            
-        } else if (this.grain.getVolume() < 300) {
-            
-            background = "-fx-background-color: orange; ";
-            
-        } else if (this.grain.getVolume() <= 350) {
-            
-            background = "-fx-background-color: orangered; ";
-            
-        }
-        
-        this.label.setStyle(background + " -fx-font: 13 Tahoma; -fx-font-weight: bold; ");
     }
 }

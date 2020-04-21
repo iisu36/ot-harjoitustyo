@@ -65,7 +65,6 @@ public class SiloViewController {
 
         Stage stage = (Stage) createButton.getScene().getWindow();
         stage.close();
-        
-        
+
     }
 }

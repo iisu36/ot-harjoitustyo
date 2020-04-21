@@ -5,7 +5,10 @@
  */
 package silo.domain;
 
+//import java.util.ArrayList;
+
 import java.util.ArrayList;
+
 
 /**
  *
@@ -44,29 +47,29 @@ public class Client {
         this.name = name;
     }
 
-    public ArrayList<Silo> getSiloList() {
-        return siloList;
-    }
-
-    public void setSiloList(ArrayList<Silo> siloList) {
-        this.siloList = siloList;
-    }
-
+//    public ArrayList<Silo> getSiloList() {
+//        return siloList;
+//    }
+//
+//    public void setSiloList(ArrayList<Silo> siloList) {
+//        this.siloList = siloList;
+//    }
+//
     public String getAddress() {
         return address;
     }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
+//
+//    public void setAddress(String address) {
+//        this.address = address;
+//    }
+//
     public String getPhone() {
         return phone;
     }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+//
+//    public void setPhone(String phone) {
+//        this.phone = phone;
+//    }
 
     @Override
     public String toString() {
