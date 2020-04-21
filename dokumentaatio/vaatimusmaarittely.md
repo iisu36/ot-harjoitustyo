@@ -19,8 +19,8 @@ Sovellukseen voidaan tallettaa ja sieltä saadaan helposti ja nopeasti tietoja:
 ## Asiakkaat
 
 - [x] Nimi
-- [ ] Osoite
-- [ ] Puhelinnumero
+- [x] Osoite
+- [x] Puhelinnumero
 - [ ] Mahdolliset laskutustiedot
 
 ## Käyttöliittymäluonnos
@@ -40,7 +40,7 @@ Sovellukseen voidaan tallettaa ja sieltä saadaan helposti ja nopeasti tietoja:
 
 ## Säilytettäviä tietoja
 
-- [ ] Asiakkaan tiedot (osittain)
+- [x] Asiakkaan tiedot
 - [x] Siilon tiedot
     - [ ] Historia
     - [ ] Lajisiilo?
