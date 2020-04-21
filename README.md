@@ -15,6 +15,8 @@
 
 [Viikko 4](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko4)
 
+[Viikko 5](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Komentorivitoiminnot
 
 ### Testaus
