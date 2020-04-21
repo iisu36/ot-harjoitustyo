@@ -18,4 +18,5 @@
 | 4 | 07.04 |  4   | checkstylen käyttöottoa ja testausta|
 | 5 | 19.04 |  6   | uusi tietokanta |
 | 5 | 20.04 |  6   | treetableview asiakkaille |
-|  |**yhteensä**|  **73**  |  
+| 5 | 21.04 |  4   | testien ja sekvenssikaavion tekemistä |
+|  |**yhteensä**|  **77**  |  
