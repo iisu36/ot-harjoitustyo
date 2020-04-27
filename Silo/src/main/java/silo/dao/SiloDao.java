@@ -162,10 +162,12 @@ public class SiloDao {
             silo.setClient(new Client(rs.getString("client")));    
         }
 
-        silo.setGrain(grain);
-
         grain.setCrop(rs.getString("crop"));
+        grain.setVariety(rs.getString("variety"));
+        grain.setProductionMethod(rs.getString("production"));
         grain.setVolume(rs.getInt("volume"));
+        
+        silo.setGrain(grain);
 
         stmt.close();
         rs.close();

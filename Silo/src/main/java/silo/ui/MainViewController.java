@@ -106,13 +106,13 @@ public class MainViewController {
                 client = silo.getClient();
                 client.addGrain(silo.getGrain());
                 client.addSilo(silo);
-                
+
                 if (isNewClient(client.getName()) == null) {
                     clientList.add(client);
                 } else {
                     clientList.add(new Client(""));
                 }
-                
+
                 showInfo(silo);
 
                 //silo.getLabel().setOnMouseEntered(eh -> mouseEnteredLabel(eh));
@@ -176,7 +176,7 @@ public class MainViewController {
         silo = getSilo();
 
         if (!silo.getClient().getName().isBlank()) {
-            
+
             ArrayList<Silo> list = silo.getClient().getSiloList();
             list.remove(silo);
             silo.getClient().setSiloList(list);
@@ -220,43 +220,53 @@ public class MainViewController {
 
         clientTree = new TreeItem<>(treeRoot);
         clientTree.setExpanded(true);
-        
+
         for (Client listClient : clientList) {
-            
-            if (!listClient.getName().isBlank()) {
-                
-                TreeItem<Silo> treeClient = new TreeItem<>(listClient.getSiloList().get(0));
-                
+
+            if (!listClient.getName().isBlank() && !listClient.getSiloList().isEmpty()) {
+
+                Silo clientRoot = new Silo();
+                clientRoot.setIndex(0);
+                clientRoot.setClient(new Client(listClient.getName()));
+                Grain clientGrain = new Grain();
+                clientGrain.setCrop("");
+                clientGrain.setVariety("");
+                clientGrain.setVolume(0);
+                clientRoot.setGrain(clientGrain);
+
+                TreeItem<Silo> treeClient = new TreeItem<>(clientRoot);
+                treeClient.setExpanded(true);
+
                 for (Silo listSilo : listClient.getSiloList()) {
-                    
+
                     TreeItem<Silo> treeSilo = new TreeItem<>(listSilo);
-                    
+
                     treeClient.getChildren().add(treeSilo);
                 }
-                
+
                 clientTree.getChildren().add(treeClient);
             }
         }
 
         clientTable.setRoot(clientTree);
     }
-    
+
     @FXML
     public void updateClientTree() throws SQLException {
-        
+
         for (Client listClient : clientList) {
-            
+
             if (!listClient.getName().isBlank()) {
-                
+
                 TreeItem<Silo> treeClient = new TreeItem<>(listClient.getSiloList().get(0));
-                
+
                 for (Silo listSilo : listClient.getSiloList()) {
-                    
+
                     TreeItem<Silo> treeSilo = new TreeItem<>(listSilo);
-                    
+
                     treeClient.getChildren().add(treeSilo);
                 }
-                
+
                 clientTree.getChildren().add(treeClient);
             }
         }
