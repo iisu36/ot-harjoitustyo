@@ -56,8 +56,11 @@
                                             <children>
                                                 <TreeTableView fx:id="clientTable" prefHeight="925.0" prefWidth="300.0">
                                                     <columns>
-                                                        <TreeTableColumn fx:id="clientColumn" prefWidth="75.0" text="Client" />
-                                                        <TreeTableColumn fx:id="siloColumn" prefWidth="75.0" text="Silo" />
+                                                        <TreeTableColumn fx:id="clientColumn" prefWidth="100.0" text="Client" />
+                                                        <TreeTableColumn fx:id="siloColumn" prefWidth="30.0" text="Silo" />
+                                                        <TreeTableColumn fx:id="cropColumn" prefWidth="60.0" text="Crop" />
+                                                        <TreeTableColumn fx:id="varietyColumn" prefWidth="60.0" text="Variety" />
+                                                        <TreeTableColumn fx:id="volumeColumn" prefWidth="50.0" text="hl" />
                                                     </columns>
                                                 </TreeTableView>
                                             </children>

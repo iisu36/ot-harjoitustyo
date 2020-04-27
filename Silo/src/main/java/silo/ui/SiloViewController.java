@@ -34,9 +34,7 @@ public class SiloViewController {
     @FXML
     public void addSilo() throws SQLException {
 
-        Silo silo = MainViewController.getSilo();
-
-        client = new Client(clientName.getText());
+        silo = MainViewController.getSilo();
 
         grain = new Grain();
         grain.setCrop(crop.getText());
@@ -45,23 +43,33 @@ public class SiloViewController {
         grain.setProductionMethod(productionMethod.getText());
 
         silo.setGrain(grain);
-        silo.setClient(client);
+        
+        client = MainViewController.isNewClient(clientName.getText());
 
-        client.addGrain(grain);
-        client.addSilo(silo);
+        if (client == null) {
+
+            client = new Client(clientName.getText());
+            silo.setClient(client);
+
+            client.addGrain(grain);
+            client.addSilo(silo);
+
+            MainViewController.clientList.add(silo.getClient());
+
+            ClientDao clientDao = new ClientDao();
+            clientDao.create(client);
+        } else {
+
+            silo.setClient(client);
+
+            client.addGrain(grain);
+            client.addSilo(silo);
+        }
 
         MainViewController.showInfo(silo);
 
         SiloDao siloDao = new SiloDao();
         siloDao.create(silo);
-
-        if (MainViewController.isNewClient(client)) {
-
-            ClientDao clientDao = new ClientDao();
-            clientDao.create(client);
-        }
-
-        MainViewController.clientList.set(silo.getIndex() - 1, silo.getClient());
 
         Stage stage = (Stage) createButton.getScene().getWindow();
         stage.close();

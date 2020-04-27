@@ -42,9 +42,13 @@ public class MainViewController {
     public TextField volume;
     public TextField productionMethod;
     public Text info;
-    public TreeTableView<Client> clientTable;
-    public TreeTableColumn<Client, String> clientColumn;
-    public TreeTableColumn<Client, String> siloColumn;
+    public TreeTableView<Silo> clientTable;
+    public TreeItem<Silo> clientTree;
+    public TreeTableColumn<Silo, String> clientColumn;
+    public TreeTableColumn<Silo, Integer> siloColumn;
+    public TreeTableColumn<Silo, String> cropColumn;
+    public TreeTableColumn<Silo, String> varietyColumn;
+    public TreeTableColumn<Silo, String> volumeColumn;
 
     @FXML
     public GridPane siloGrid;
@@ -99,8 +103,16 @@ public class MainViewController {
                 siloLabelMap.put(silo.getLabel(), silo);
                 siloGrid.add(silo.getLabel(), column, row);
                 siloGrid.add(button, column, row);
-                clientList.add(new Client(""));
-
+                client = silo.getClient();
+                client.addGrain(silo.getGrain());
+                client.addSilo(silo);
+                
+                if (isNewClient(client.getName()) == null) {
+                    clientList.add(client);
+                } else {
+                    clientList.add(new Client(""));
+                }
+                
                 showInfo(silo);
 
                 //silo.getLabel().setOnMouseEntered(eh -> mouseEnteredLabel(eh));
@@ -141,7 +153,7 @@ public class MainViewController {
         source = (Button) e.getSource();
         silo = siloMap.get(source);
 
-        if (silo.getClient() != null) {
+        if (!silo.getClient().getName().isBlank()) {
 
             info.setText("Silo " + silo.getIndex() + " \n" + getSilo().allInfo());
 
@@ -163,8 +175,11 @@ public class MainViewController {
 
         silo = getSilo();
 
-        if (silo.getClient() != null) {
-            clientList.set(silo.getIndex() - 1, new Client(""));
+        if (!silo.getClient().getName().isBlank()) {
+            
+            ArrayList<Silo> list = silo.getClient().getSiloList();
+            list.remove(silo);
+            silo.getClient().setSiloList(list);
 
             source.setStyle(null);
             resetSilo(silo, source);
@@ -187,18 +202,66 @@ public class MainViewController {
     public void createClientTree() throws SQLException {
 
         clientColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
-        siloColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("phone"));
+        siloColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("index"));
+        cropColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("crop"));
+        varietyColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("variety"));
+        volumeColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("volume"));
 
         clientTable.setShowRoot(true);
 
-        TreeItem<Client> treeSilo = new TreeItem<>(new Client("Silo"));
+        Silo treeRoot = new Silo();
+        treeRoot.setIndex(0);
+        treeRoot.setClient(new Client("Clients"));
+        Grain rootGrain = new Grain();
+        rootGrain.setCrop("");
+        rootGrain.setVariety("");
+        rootGrain.setVolume(0);
+        treeRoot.setGrain(rootGrain);
 
-        TreeItem<Client> treeClient = new TreeItem<>(new Client("Asiakas"));
-        treeClient.setExpanded(true);
+        clientTree = new TreeItem<>(treeRoot);
+        clientTree.setExpanded(true);
+        
+        for (Client listClient : clientList) {
+            
+            if (!listClient.getName().isBlank()) {
+                
+                TreeItem<Silo> treeClient = new TreeItem<>(listClient.getSiloList().get(0));
+                
+                for (Silo listSilo : listClient.getSiloList()) {
+                    
+                    TreeItem<Silo> treeSilo = new TreeItem<>(listSilo);
+                    
+                    treeClient.getChildren().add(treeSilo);
+                }
+                
+                clientTree.getChildren().add(treeClient);
+            }
+        }
 
-        treeClient.getChildren().setAll(treeSilo);
+        clientTable.setRoot(clientTree);
+    }
+    
+    @FXML
+    public void updateClientTree() throws SQLException {
+        
+        for (Client listClient : clientList) {
+            
+            if (!listClient.getName().isBlank()) {
+                
+                TreeItem<Silo> treeClient = new TreeItem<>(listClient.getSiloList().get(0));
+                
+                for (Silo listSilo : listClient.getSiloList()) {
+                    
+                    TreeItem<Silo> treeSilo = new TreeItem<>(listSilo);
+                    
+                    treeClient.getChildren().add(treeSilo);
+                }
+                
+                clientTree.getChildren().add(treeClient);
+            }
+        }
 
-        clientTable.setRoot(treeClient);
+        clientTable.setRoot(clientTree);
     }
 
     @FXML
@@ -208,7 +271,7 @@ public class MainViewController {
 
     public static void showInfo(Silo silo) {
 
-        if (silo.getClient() != null) {
+        if (!silo.getClient().getName().isBlank()) {
 
             silo.getLabel().setText(silo.toString());
 
@@ -220,21 +283,21 @@ public class MainViewController {
         }
     }
 
-    public static boolean isNewClient(Client client) {
+    public static Client isNewClient(String name) {
 
         for (Client current : clientList) {
 
-            if (current.getName().equals(client.getName())) {
+            if (current.getName().equals(name) && !current.getName().isBlank()) {
 
-                return false;
+                return current;
             }
         }
 
-        return true;
+        return null;
     }
 
     public void resetSilo(Silo silo, Button button) {
-        silo.setClient(null);
+        silo.setClient(new Client(""));
         silo.setGrain(new Grain());
 
         button.setText(String.valueOf(silo.getIndex()));

@@ -14,6 +14,7 @@ import silo.domain.Silo;
 import silo.domain.User;
 import silo.ui.LogInViewController;
 import static silo.ui.MainViewController.siloList;
+import static silo.ui.MainViewController.clientList;
 
 /**
  *
@@ -142,11 +143,23 @@ public class SiloDao {
 
         Silo silo = new Silo();
         Grain grain = new Grain();
-
-        silo.setClient(new Client(rs.getString("client")));
-
-        if (silo.getClient().getName().isBlank()) {
-            silo.setClient(null);
+        
+        if (!clientList.isEmpty()) {
+            
+            for (Client listClient : clientList) {
+                
+                if (listClient.getName().equals(rs.getString("client"))) {
+                    
+                    silo.setClient(listClient);
+                    break;
+                } else {
+                    
+                    silo.setClient(new Client(rs.getString("client")));
+                }
+            }
+        } else {
+         
+            silo.setClient(new Client(rs.getString("client")));    
         }
 
         silo.setGrain(grain);

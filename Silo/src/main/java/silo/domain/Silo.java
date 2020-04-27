@@ -5,7 +5,6 @@
  */
 package silo.domain;
 
-import java.util.ArrayList;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -21,9 +20,41 @@ public class Silo {
     private Client client;
     private Grain grain;
     private Label label;
+    private String name;
+    private String crop;
+    private String variety;
+    private Integer volume;
 
     public Silo() {
-        client = null;
+        this.client = null;
+        this.name = "";
+        this.crop = "";
+        this.variety = "";
+        this.volume = 0;
+    }
+    
+    public String getName() {
+        this.name = this.client.getName();
+        
+        return this.name;
+    }
+    
+    public String getCrop() {
+        this.crop = this.grain.getCrop();
+        
+        return this.crop;
+    }
+
+    public String getVariety() {
+        this.variety = this.grain.getVariety();
+        
+        return this.variety;
+    }
+
+    public Integer getVolume() {
+        this.volume = this.grain.getVolume();
+        
+        return this.volume;
     }
     
     public void setLabel(Label label) {

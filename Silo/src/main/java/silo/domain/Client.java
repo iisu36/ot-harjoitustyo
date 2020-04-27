@@ -6,9 +6,7 @@
 package silo.domain;
 
 //import java.util.ArrayList;
-
 import java.util.ArrayList;
-
 
 /**
  *
@@ -21,14 +19,20 @@ public class Client {
     private String phone;
     private ArrayList<Grain> grainList;
     private ArrayList<Silo> siloList;
+    private String crop;
+    private String variety;
+    private String volume;
 
     public Client(String name) {
 
         this.name = name;
-        grainList = new ArrayList<>();
-        siloList = new ArrayList<>();
+        this.grainList = new ArrayList<>();
+        this.siloList = new ArrayList<>();
         this.address = "";
         this.phone = "";
+        this.crop = "";
+        this.variety = "";
+        this.volume = "";
     }
 
     public void addSilo(Silo silo) {
@@ -47,29 +51,53 @@ public class Client {
         this.name = name;
     }
 
-//    public ArrayList<Silo> getSiloList() {
-//        return siloList;
-//    }
-//
-//    public void setSiloList(ArrayList<Silo> siloList) {
-//        this.siloList = siloList;
-//    }
-//
+    public ArrayList<Silo> getSiloList() {
+        return siloList;
+    }
+
+    public void setSiloList(ArrayList<Silo> siloList) {
+        this.siloList = siloList;
+    }
+
     public String getAddress() {
         return address;
     }
-//
-//    public void setAddress(String address) {
-//        this.address = address;
-//    }
-//
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getPhone() {
         return phone;
     }
-//
-//    public void setPhone(String phone) {
-//        this.phone = phone;
-//    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getCrop() {
+        return crop;
+    }
+
+    public void setCrop(String crop) {
+        this.crop = crop;
+    }
+
+    public String getVariety() {
+        return variety;
+    }
+
+    public void setVariety(String variety) {
+        this.variety = variety;
+    }
+
+    public String getVolume() {
+        return volume;
+    }
+
+    public void setVolume(String volume) {
+        this.volume = volume;
+    }
 
     @Override
     public String toString() {
