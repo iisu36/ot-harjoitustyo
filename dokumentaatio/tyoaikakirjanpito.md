@@ -19,4 +19,6 @@
 | 5 | 19.04 |  6   | uusi tietokanta |
 | 5 | 20.04 |  6   | treetableview asiakkaille |
 | 5 | 21.04 |  4   | testien ja sekvenssikaavion tekemistä |
-|  |**yhteensä**|  **77**  |  
+| 6 | 27.04 |  4   | treetableview asiakkaat ja siilot |
+| 6 | 28.04 |  4   | testien ja javadocin tekemistä, pakettikaavio |
+|  |**yhteensä**|  **85**  |  
