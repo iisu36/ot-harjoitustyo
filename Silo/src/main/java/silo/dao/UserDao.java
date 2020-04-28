@@ -13,8 +13,10 @@ import silo.domain.Silo;
 import static silo.ui.MainViewController.siloList;
 
 /**
- *
- * @author Iizu
+ * @author  Iisakki
+ * @version Viikko 6
+ * 
+ * This class controls the userdatabase.
  */
 public class UserDao {
 
@@ -48,6 +50,13 @@ public class UserDao {
 
     }
 
+    /**
+     * Creates the users table to the userdatabase.
+     * 
+     * A user has a username and a password.
+     * 
+     * @throws SQLException Exception.
+     */
     public void createTable() throws SQLException {
 
         Statement s = db.createStatement();
@@ -58,6 +67,12 @@ public class UserDao {
 
     }
 
+    /**
+     * Creates a new user to the database.
+     * 
+     * @param user  The user which username and password will be saved to database.
+     * @throws SQLException Exception.
+     */
     public void create(User user) throws SQLException {
 
         createTable();
@@ -76,6 +91,15 @@ public class UserDao {
         s.close();
     }
 
+    /**
+     * Searches the user from the database.
+     * 
+     * Returns the user's name and password if found, if not, null.
+     * 
+     * @param username  The user's name that is searched for.
+     * @return  User with the corresponding password. Or null.
+     * @throws SQLException Exception.
+     */
     public User findUser(String username) throws SQLException {
 
         createTable();
@@ -117,6 +141,16 @@ public class UserDao {
         
     }
 
+    /**
+     * Checks if the the username and the password matches eachother.
+     * 
+     * If not, returns null, and if they do, returns the user.
+     * 
+     * @param username  Username in the database.
+     * @param passw     Username's corresponding password in the database.
+     * @return  Logging in user or null.
+     * @throws SQLException Exception.
+     */
     public User isLogInOK(String username, String passw) throws SQLException {
 
         PreparedStatement stmt = db.prepareStatement("SELECT * FROM Users WHERE username =? AND password =?");

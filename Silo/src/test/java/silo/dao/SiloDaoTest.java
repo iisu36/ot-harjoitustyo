@@ -8,12 +8,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import silo.domain.Client;
 import silo.domain.Silo;
 import silo.domain.User;
+import silo.domain.Grain;
 import static silo.ui.MainViewController.siloList;
+import static silo.ui.MainViewController.clientList;
 
 
 /*
@@ -81,6 +85,23 @@ public class SiloDaoTest {
 
         s.executeUpdate();
         
+        PreparedStatement t = connection.prepareStatement("INSERT OR ABORT INTO "
+                + "Silos(user, silo, row, column, client, "
+                + "crop, variety, volume, production) "
+                + "VALUES (?,?,?,?,?,?,?,?,?)");
+
+        t.setString(1, user.getName());
+        t.setInt(2, 99);
+        t.setInt(3, 9);
+        t.setInt(4, 9);
+        t.setString(5, "");
+        t.setString(6, "");
+        t.setString(7, "");
+        t.setInt(8, 0);
+        t.setString(9, "");
+
+        t.executeUpdate();
+        
         ArrayList<Silo> list = new ArrayList<>();
         
         list.add(0, new Silo());
@@ -95,9 +116,72 @@ public class SiloDaoTest {
         client1 = new Client("Mikko Mallikas");
         client2 = new Client("Maija Meikäläinen");
         
+        ArrayList<Client> clients = new ArrayList<>();
+        
+        clients.add(client1);
+        clients.add(client2);
+        
+        clientList = clients;
+        
         silo1 = new Silo();
         silo2 = new Silo();
     }
+    
+    @Test
+    public void hasMapWorksCorrectly() throws SQLException {
+        assertTrue(dao.hasMap());
+    }
+    
+    @Test
+    public void creatingTableWorksCorrectly() throws SQLException {
+        Statement stmt = connection.createStatement();
+        stmt.execute("DROP TABLE Silos");
+        
+        assertFalse(dao.hasMap());
+        
+        dao.createTable(4, 1);
+        
+        assertTrue(dao.hasMap());
+    }
+    
+    @Test
+    public void removeSiloWorksCorrectly() throws SQLException {
+        silo1 = dao.getSilo(2, 3);
+        silo1.setIndex(1);
+        dao.remove(silo1);
+        
+        Silo silo3 = dao.getSilo(2, 3);
+        
+        assertEquals("", silo3.getClient().getName());
+        assertEquals("", silo3.getGrain().getCrop());
+        assertEquals(0, silo3.getGrain().getVolume());
+    }
+    
+//    @Test
+//    public void createSiloWorksCorrectly() throws SQLException {
+//        Silo silo3 = new Silo();
+//        silo3 = dao.getSilo(9, 9);
+//
+//        Grain grain3 = new Grain();        
+//        grain3.setCrop("herne");
+//        
+//        Client client3 = new Client("Matti");
+//        
+//        silo3.setGrain(grain3);
+//        silo3.setClient(client3);
+//        //silo3.setIndex(99);
+//        
+//        
+//        clientList.add(client3);
+//        
+//        
+//        dao.create(silo3);
+//        
+//        
+//        assertEquals("Matti", silo3.getClient().getName());
+//        assertEquals("herne", silo3.getGrain().getCrop());
+//        assertEquals(99, silo3.getIndex());
+//    }
 
     @Test
     public void listingSilosCorrectly() throws SQLException {

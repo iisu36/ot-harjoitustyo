@@ -18,6 +18,12 @@ import silo.domain.Client;
 import silo.domain.Grain;
 import silo.domain.Silo;
 
+/**
+ * @author  Iisakki
+ * @version Viikko 6
+ * 
+ * This class controls the creating of a new client silo with wanted values.
+ */
 public class SiloViewController {
 
     public Silo silo;
@@ -31,6 +37,16 @@ public class SiloViewController {
     public TextField productionMethod;
     public Button createButton;
 
+    /**
+     * Adds values to selected silo,updates silos values in the database and changes
+     * silomap visual.
+     * 
+     * Also adds client to clientlist if the client is new. If it's an existing client
+     * adds the new silo and grain to client's information. After pressing add, the newly
+     * opened window closes.
+     * 
+     * @throws SQLException Exception.
+     */
     @FXML
     public void addSilo() throws SQLException {
 

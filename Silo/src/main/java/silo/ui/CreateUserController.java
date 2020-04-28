@@ -9,20 +9,20 @@ import silo.dao.UserDao;
 import silo.domain.User;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
- *
- * @author Iizu
+ * @author  Iisakki
+ * @version Viikko6
+ * 
+ * This class controls the creating of a new user and switching back to login-view.
  */
 public class CreateUserController {
-    
+
     private UserDao dao;
 
     private User p;
@@ -39,15 +39,28 @@ public class CreateUserController {
     @FXML
     private Label userNameLabel;
 
+    /**
+     * Switches the view back to login-view.
+     * 
+     * @param event ActionEvent that triggers this method (pressing back)
+     * @throws IOException Exception.
+     */
     @FXML
     private void handleBack(ActionEvent event) throws IOException {
         userNameField.setText("");
         passWordField.setText("");
         error.setText("");
-        
+
         SiloUi.setRoot("LogInView");
     }
 
+    /**
+     * Creates user to database and switches to login-view.
+     * 
+     * @param event ActionEvent that triggers this method (pressing create)
+     * @throws SQLException Exception.
+     * @throws IOException  Exception.
+     */
     @FXML
     private void handleCreate(ActionEvent event) throws SQLException, IOException {
 
@@ -55,8 +68,8 @@ public class CreateUserController {
 
         String name = userNameField.getText();
 
-        if(name.length() < 3){
-           // usernameLabel.setText("Username: (must contain at least 3 letters) !!!!!!!!!!!!!");
+        if (name.length() < 3) {
+            // usernameLabel.setText("Username: (must contain at least 3 letters)");
             error.setText("Practice your reading skills....");
             return;
         }
@@ -72,15 +85,11 @@ public class CreateUserController {
             d.create(p);
             userNameField.setText("");
             passWordField.setText("");
-        //    usernameLabel.setText("Username: (must contain at least 3 letters)");
+            //    usernameLabel.setText("Username: (must contain at least 3 letters)");
             error.setText("");
-            
+
             SiloUi.setRoot("LogInView");
 
         }
-    }
-
-    public void initialize(URL location, ResourceBundle resources) {
-
     }
 }

@@ -23,6 +23,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import silo.domain.User;
 
+/**
+ * @author  Iisakki
+ * @version Viikko 6
+ * 
+ * This class controls the logging in -action.
+ */
 public class LogInViewController implements Initializable {
     
     public static User user;
@@ -40,6 +46,18 @@ public class LogInViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
 
+    /**
+     * Handles logging in.
+     * 
+     * Guides user to log in correctly: if username is wrong -> create an account
+     * if password is wrong -> wrong password. After succesful log in, switches to
+     * 1. mainview, if the user is not new or 2. to createmap-view, if the user is
+     * new.
+     * 
+     * @param event ActionEvent that triggers this method (pressing log in)
+     * @throws SQLException Exception.
+     * @throws IOException  Exception.
+     */
     @FXML
     private void handleLogIn(ActionEvent event) throws SQLException, IOException {
 
@@ -79,6 +97,12 @@ public class LogInViewController implements Initializable {
         }
     }
 
+    /**
+     * Switches to createuser-view where a new user can be made.
+     * 
+     * @param event ActionEvent that triggers this method (pressingcreate user)
+     * @throws IOException  Exception.
+     */
     @FXML
     private void handleNewUser(ActionEvent event) throws IOException {
 
