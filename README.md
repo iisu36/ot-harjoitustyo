@@ -17,6 +17,8 @@
 
 [Viikko 5](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko5)
 
+[Viikko 6](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko6)
+
 ## Komentorivitoiminnot
 
 ### Testaus
@@ -45,7 +47,7 @@ mvn package
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _Silo-1.0-SNAPSHOT.jar_
 
-<!--### JavaDoc
+### JavaDoc
 
 JavaDoc generoidaan komennolla
 
@@ -53,7 +55,7 @@ JavaDoc generoidaan komennolla
 mvn javadoc:javadoc
 ```
 
-JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_-->
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
 
 ### Checkstyle
 
