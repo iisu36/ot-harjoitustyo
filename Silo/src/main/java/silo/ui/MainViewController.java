@@ -116,9 +116,6 @@ public class MainViewController {
 
                 showInfo(silo);
 
-                //silo.getLabel().setOnMouseEntered(eh -> mouseEnteredLabel(eh));
-                //silo.getLabel().setOnMouseClicked(eh -> mouseClickedLabel(eh));
-                button.setOnMouseEntered(e -> mouseEntered(e));
                 button.setOnMouseClicked(e -> {
                     try {
                         mouseClicked(e);
@@ -126,26 +123,8 @@ public class MainViewController {
                         Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 });
-
             }
         }
-
-        //source = (Button) siloGrid.getChildren().get(1);
-        //hover = (Button) siloGrid.getChildren().get(1);
-    }
-
-    @FXML
-    public void mouseEntered(MouseEvent e) {
-
-//        hover = (Button) e.getSource();
-//        silo = siloMap.get(hover);
-//        if (silo.getClient() != null) {
-//            info.setText("Silo " + silo.getIndex() + " " + silo.toString());
-//        } else {
-//            info.setText("");
-//        }
-//        Integer colIndex = siloGrid.getColumnIndex(source);
-//        Integer rowIndex = siloGrid.getRowIndex(source);
     }
 
     @FXML
@@ -190,9 +169,6 @@ public class MainViewController {
 
             siloDao.remove(silo);
 
-        } else {
-
-            //source.setDisable(true);
         }
 
         info.setText("");

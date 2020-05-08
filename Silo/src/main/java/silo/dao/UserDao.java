@@ -21,9 +21,9 @@ public class UserDao {
 
     public String url;
     public Connection db;
-    
+
     public UserDao(String url) {
-        
+
         this.url = "jdbc:sqlite:" + url + ".db";
         this.db = createConnection();
     }
@@ -58,7 +58,8 @@ public class UserDao {
 
         Statement s = db.createStatement();
 
-        s.execute("CREATE TABLE IF NOT EXISTS Users (user_id INTEGER PRIMARY KEY, username TEXT UNIQUE, password TEXT)");
+        s.execute("CREATE TABLE IF NOT EXISTS Users (user_id INTEGER PRIMARY KEY, "
+                + "username TEXT UNIQUE, password TEXT)");
 
         s.close();
     }
@@ -77,7 +78,8 @@ public class UserDao {
         Statement s = db.createStatement();
 
         try {
-            PreparedStatement p = db.prepareStatement("INSERT OR ABORT INTO Users(username, password) VALUES (?,?)");
+            PreparedStatement p = db.prepareStatement("INSERT OR ABORT INTO "
+                    + "Users(username, password) VALUES (?,?)");
             p.setString(1, user.getName());
             p.setString(2, user.getPassword());
 
@@ -85,7 +87,7 @@ public class UserDao {
 
         } catch (SQLException e) {
         }
-        
+
         s.close();
     }
 
@@ -102,7 +104,9 @@ public class UserDao {
 
         createTable();
 
-        PreparedStatement stmt = db.prepareStatement("SELECT * FROM Users WHERE username = ?");
+        PreparedStatement stmt = db.prepareStatement("SELECT * FROM Users WHERE "
+                + "username = ?");
+
         stmt.setString(1, username);
         ResultSet rs = stmt.executeQuery();
 
@@ -151,7 +155,8 @@ public class UserDao {
      */
     public User isLogInOK(String username, String passw) throws SQLException {
 
-        PreparedStatement stmt = db.prepareStatement("SELECT * FROM Users WHERE username =? AND password =?");
+        PreparedStatement stmt = db.prepareStatement("SELECT * FROM Users WHERE "
+                + "username =? AND password =?");
         stmt.setString(1, username);
         stmt.setString(2, passw);
         ResultSet rs = stmt.executeQuery();

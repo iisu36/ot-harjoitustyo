@@ -15,7 +15,6 @@ import javafx.scene.control.Label;
 public class Silo {
 
     private int index;
-    //private ArrayList<String> history;
     private Button button;
     private Client client;
     private Grain grain;
@@ -32,31 +31,31 @@ public class Silo {
         this.variety = "";
         this.volume = 0;
     }
-    
+
     public String getName() {
         this.name = this.client.getName();
-        
+
         return this.name;
     }
-    
+
     public String getCrop() {
         this.crop = this.grain.getCrop();
-        
+
         return this.crop;
     }
 
     public String getVariety() {
         this.variety = this.grain.getVariety();
-        
+
         return this.variety;
     }
 
     public Integer getVolume() {
         this.volume = this.grain.getVolume();
-        
+
         return this.volume;
     }
-    
+
     public void setLabel(Label label) {
         this.label = label;
     }
@@ -101,10 +100,10 @@ public class Silo {
     public String toString() {
         return client.getName() + "\n" + grain.getCrop() + "\n" + grain.getVolume() + " hl";
     }
-    
+
     public String allInfo() {
-        return client.getName() + "\n" + grain.getCrop() + "\n" 
-                + grain.getVariety() + "\n" + grain.getVolume() + " hl\n" 
+        return client.getName() + "\n" + grain.getCrop() + "\n"
+                + grain.getVariety() + "\n" + grain.getVolume() + " hl\n"
                 + grain.getProductionMethod();
     }
 }

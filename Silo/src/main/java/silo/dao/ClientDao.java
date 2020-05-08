@@ -25,7 +25,7 @@ public class ClientDao {
     }
 
     public ClientDao(String url) {
-        
+
         this.url = "jdbc:sqlite:" + url + ".db";
         this.db = createConnection();
 
@@ -33,7 +33,7 @@ public class ClientDao {
     }
 
     private Connection createConnection() {
-        
+
         try {
             return DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -42,12 +42,12 @@ public class ClientDao {
     }
 
     public Connection getConnection() {
-        
+
         return db;
     }
 
     public void stopConnection() throws SQLException {
-        
+
         db.close();
     }
 
@@ -80,26 +80,27 @@ public class ClientDao {
     }
 
     public void remove(Client poistettava) throws SQLException {
-        
+
         int id = getClientId(poistettava);
 
         Statement s = db.createStatement();
 
-        s.execute("DELETE FROM Clients WHERE user = '" + user.getName() + "' AND client_id = " + id);
+        s.execute("DELETE FROM Clients WHERE user = '" + user.getName()
+                + "' AND client_id = " + id);
 
         s.close();
     }
 
-    
-
     public int getClientId(Client client) throws SQLException {
-        
-        PreparedStatement stmt = db.prepareStatement("SELECT client_id FROM Clients WHERE user = '" + user.getName() + "' AND name = '" + client.getName() + "'");
+
+        PreparedStatement stmt = db.prepareStatement("SELECT client_id FROM Clients "
+                + "WHERE user = '" + user.getName() + "' AND name = '"
+                + client.getName() + "'");
 
         ResultSet rs = stmt.executeQuery();
-        
+
         int id = rs.getInt("client_id");
-        
+
         stmt.close();
         rs.close();
 
@@ -110,10 +111,11 @@ public class ClientDao {
 
         Statement stmt = db.createStatement();
 
-        ResultSet rs = stmt.executeQuery("SELECT name FROM Clients WHERE user = '" + user.getName() + "'");
+        ResultSet rs = stmt.executeQuery("SELECT name FROM Clients WHERE user = '"
+                + user.getName() + "'");
 
         String list = "";
-        
+
         while (rs.next()) {
             list += rs.getString("name") + "\n";
         }

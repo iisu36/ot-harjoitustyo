@@ -16,10 +16,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
- * @author  Iisakki
+ * @author Iisakki
  * @version Viikko6
- * 
- * This class controls the creating of a new user and switching back to login-view.
+ *
+ * This class controls the creating of a new user and switching back to
+ * login-view.
  */
 public class CreateUserController {
 
@@ -34,13 +35,13 @@ public class CreateUserController {
 
     /**
      * Switches the view back to login-view.
-     * 
+     *
      * @param event ActionEvent that triggers this method (pressing back)
      * @throws IOException Exception.
      */
     @FXML
     private void handleBack(ActionEvent event) throws IOException {
-        
+
         userNameField.setText("");
         passWordField.setText("");
         error.setText("");
@@ -50,10 +51,10 @@ public class CreateUserController {
 
     /**
      * Creates user to database and switches to login-view.
-     * 
+     *
      * @param event ActionEvent that triggers this method (pressing create)
      * @throws SQLException Exception.
-     * @throws IOException  Exception.
+     * @throws IOException Exception.
      */
     @FXML
     private void handleCreate(ActionEvent event) throws SQLException, IOException {
@@ -64,19 +65,20 @@ public class CreateUserController {
         String password = passWordField.getText();
 
         if (name.length() < 3 || password.length() < 3) {
-            
+
             error.setText("Must contain >2 characters");
             return;
         }
 
         if (dao.findUser(userNameField.getText()) != null) {
-            
+
             error.setText("This username is already registered");
             return;
 
         } else {
 
-            User user = new User(userNameField.getText().toLowerCase(), passWordField.getText().toLowerCase());
+            User user = new User(userNameField.getText().toLowerCase(),
+                    passWordField.getText().toLowerCase());
 
             dao.create(user);
             userNameField.setText("");

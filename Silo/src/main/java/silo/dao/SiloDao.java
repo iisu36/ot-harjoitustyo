@@ -43,7 +43,7 @@ public class SiloDao {
     }
 
     private Connection createConnection() {
-        
+
         try {
             return DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -52,13 +52,40 @@ public class SiloDao {
     }
 
     public Connection getConnection() {
-        
+
         return db;
     }
 
     public void stopConnection() throws SQLException {
-        
+
         db.close();
+    }
+
+    public void insertTable(int columns, int rows) throws SQLException {
+
+        int k = 1;
+
+        for (int i = 1; i <= rows; i++) {
+
+            for (int j = 1; j <= columns; j++, k++) {
+
+                PreparedStatement p = db.prepareStatement("INSERT OR ABORT INTO "
+                        + "Silos(user, silo, row, column, client, crop, variety, "
+                        + "volume, production) VALUES (?,?,?,?,?,?,?,?,?)");
+
+                p.setString(1, user.getName()); //user
+                p.setInt(2, k); //silo
+                p.setInt(3, i); //row
+                p.setInt(4, j); //column
+                p.setString(5, ""); //client        
+                p.setString(6, ""); //crop
+                p.setString(7, ""); //variety
+                p.setInt(8, 0); // volume
+                p.setString(9, ""); //productionmethod
+
+                p.executeUpdate();
+            }
+        }
     }
 
     public void createTable(int columns, int rows) throws SQLException {
@@ -69,41 +96,18 @@ public class SiloDao {
                 + "user TEXT, silo INTEGER, row INTEGER, column INTEGER, "
                 + "client TEXT, crop TEXT, variety TEXT, volume INTEGER, production TEXT)");
 
-        int k = 1;
-
-        for (int i = 1; i <= rows; i++) {
-
-            for (int j = 1; j <= columns; j++) {
-
-                PreparedStatement p = db.prepareStatement("INSERT OR ABORT INTO "
-                        + "Silos(user, silo, row, column, client, "
-                        + "crop, variety, volume, production) "
-                        + "VALUES (?,?,?,?,?,?,?,?,?)");
-
-                p.setString(1, user.getName());
-                p.setInt(2, k);
-                p.setInt(3, i);
-                p.setInt(4, j);
-                p.setString(5, "");
-                p.setString(6, "");
-                p.setString(7, "");
-                p.setInt(8, 0);
-                p.setString(9, "");
-
-                p.executeUpdate();
-
-                k++;
-            }
-        }
-
         s.close();
+
+        insertTable(columns, rows);
     }
 
     public void create(Silo silo) throws SQLException {
 
         Statement s = db.createStatement();
 
-        PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, crop = ?, variety = ?, volume= ?, production= ? WHERE user = '" + user.getName() + "' AND silo = " + silo.getIndex());
+        PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, "
+                + "crop = ?, variety = ?, volume= ?, production= ? WHERE user = '"
+                + user.getName() + "' AND silo = " + silo.getIndex());
 
         p.setString(1, silo.getClient().getName());
         p.setString(2, silo.getGrain().getCrop());
@@ -121,7 +125,9 @@ public class SiloDao {
 
         Statement s = db.createStatement();
 
-        PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, crop = ?, variety = ?, volume= ?, production= ? WHERE user = '" + user.getName() + "' AND silo = " + silo.getIndex());
+        PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, "
+                + "crop = ?, variety = ?, volume= ?, production= ? WHERE user = '"
+                + user.getName() + "' AND silo = " + silo.getIndex());
 
         p.setString(1, "");
         p.setString(2, "");
@@ -143,28 +149,15 @@ public class SiloDao {
     public Silo getSilo(int row, int column) throws SQLException {
 
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Silos WHERE user = '" + user.getName() + "' AND row = " + row + " AND column = " + column);
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Silos WHERE user = '" 
+                + user.getName() + "' AND row = " + row + " AND column = " + column);
 
         Silo silo = new Silo();
         Grain grain = new Grain();
 
-        if (!clientList.isEmpty()) {
+        String clientName = rs.getString("client");
 
-            for (Client listClient : clientList) {
-
-                if (listClient.getName().equals(rs.getString("client"))) {
-
-                    silo.setClient(listClient);
-                    break;
-                } else {
-
-                    silo.setClient(new Client(rs.getString("client")));
-                }
-            }
-        } else {
-
-            silo.setClient(new Client(rs.getString("client")));
-        }
+        silo = checkClient(silo, clientName);
 
         grain.setCrop(rs.getString("crop"));
         grain.setVariety(rs.getString("variety"));
@@ -179,11 +172,35 @@ public class SiloDao {
         return silo;
     }
 
+    public Silo checkClient(Silo silo, String name) {
+
+        if (!clientList.isEmpty()) {
+
+            for (Client listClient : clientList) {
+
+                if (listClient.getName().equals(name)) {
+
+                    silo.setClient(listClient);
+                    break;
+                } 
+            }
+            
+            silo.setClient(new Client(name));
+            
+        } else {
+
+            silo.setClient(new Client(name));
+        }
+        
+        return silo;
+    }
+
     public ArrayList<Silo> findSilos(Client client) throws SQLException {
 
         ArrayList list = new ArrayList<Silo>();
 
-        PreparedStatement stmt = db.prepareStatement("SELECT silo FROM Silos WHERE user = '" + user.getName() + "' AND client = '" + client.getName() + "'");
+        PreparedStatement stmt = db.prepareStatement("SELECT silo FROM Silos WHERE "
+                + "user = '" + user.getName() + "' AND client = '" + client.getName() + "'");
 
         ResultSet rs = stmt.executeQuery();
 
@@ -206,7 +223,8 @@ public class SiloDao {
         try {
             stmt = db.createStatement();
 
-            ResultSet rs = stmt.executeQuery("SELECT silo FROM Silos WHERE user = '" + user.getName() + "' AND silo = 1");
+            ResultSet rs = stmt.executeQuery("SELECT silo FROM Silos WHERE user = '"
+                    + user.getName() + "' AND silo = 1");
 
             if (rs.getInt("silo") == 0) {
                 return false;
@@ -226,7 +244,8 @@ public class SiloDao {
 
         Statement stmt = db.createStatement();
 
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM Silos WHERE user = '" + user.getName() + "' AND row = 1");
+        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM Silos WHERE user = '"
+                + user.getName() + "' AND row = 1");
 
         int i = rs.getInt(1);
 
@@ -240,7 +259,8 @@ public class SiloDao {
 
         Statement stmt = db.createStatement();
 
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM Silos WHERE user = '" + user.getName() + "' AND column = 1");
+        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM Silos WHERE user = '"
+                + user.getName() + "' AND column = 1");
 
         int i = rs.getInt(1);
 
