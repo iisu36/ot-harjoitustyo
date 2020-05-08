@@ -64,7 +64,7 @@ public class LogInViewController implements Initializable {
         String username = userNameField.getText().toLowerCase();
         String password = passWordField.getText().toLowerCase();
 
-        UserDao userDao = new UserDao();
+        UserDao userDao = new UserDao("users");
 
         user = userDao.findUser(username);
 
@@ -76,7 +76,7 @@ public class LogInViewController implements Initializable {
         } else {
             user = userDao.isLogInOK(username, password);
             
-            SiloDao siloDao = new SiloDao();
+            SiloDao siloDao = new SiloDao("silos");
             
 
             if (user != null) {
@@ -100,7 +100,7 @@ public class LogInViewController implements Initializable {
     /**
      * Switches to createuser-view where a new user can be made.
      * 
-     * @param event ActionEvent that triggers this method (pressingcreate user)
+     * @param event ActionEvent that triggers this method (pressing create user)
      * @throws IOException  Exception.
      */
     @FXML

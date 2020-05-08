@@ -15,11 +15,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="silo.ui.MainViewController">
+<BorderPane prefHeight="1000.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="silo.ui.MainViewController">
     <right>
         <StackPane BorderPane.alignment="CENTER">
             <children>
-                <GridPane fx:id="siloGrid" alignment="TOP_RIGHT" maxHeight="1000.0" maxWidth="700.0" minHeight="300.0" minWidth="300.0">
+                <GridPane fx:id="siloGrid" alignment="TOP_RIGHT" maxHeight="675.0" maxWidth="675.0" minHeight="75.0" minWidth="75.0" prefHeight="75.0" prefWidth="75.0" StackPane.alignment="TOP_RIGHT">
                     <padding>
                         <Insets bottom="5.0" right="5.0" />
                     </padding>
@@ -30,11 +30,11 @@
     <left>
         <VBox BorderPane.alignment="CENTER">
             <children>
-                <TabPane minHeight="-Infinity" minWidth="300.0" prefHeight="960.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
+                <TabPane minHeight="-Infinity" minWidth="300.0" prefHeight="960.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                        <Tab text="Information">
+                        <Tab text="Siloinfo">
                             <content>
-                                <VBox>
+                                <VBox prefWidth="519.0">
                                     <children>
                                         <Text fx:id="info" text="">
                                             <font>
@@ -50,16 +50,16 @@
                         </Tab>
                         <Tab onSelectionChanged="#createClientTree" text="Clients">
                             <content>
-                                <ScrollPane prefHeight="612.0" prefWidth="300.0">
+                                <ScrollPane prefHeight="612.0" prefWidth="400.0">
                                     <content>
-                                        <VBox fx:id="box" prefHeight="926.0" prefWidth="300.0">
+                                        <VBox fx:id="box" prefHeight="926.0" prefWidth="400.0">
                                             <children>
                                                 <TreeTableView fx:id="clientTable" prefHeight="925.0" prefWidth="300.0">
                                                     <columns>
-                                                        <TreeTableColumn fx:id="clientColumn" prefWidth="100.0" text="Client" />
+                                                        <TreeTableColumn fx:id="clientColumn" prefWidth="160.0" text="Client" />
                                                         <TreeTableColumn fx:id="siloColumn" prefWidth="30.0" text="Silo" />
-                                                        <TreeTableColumn fx:id="cropColumn" prefWidth="60.0" text="Crop" />
-                                                        <TreeTableColumn fx:id="varietyColumn" prefWidth="60.0" text="Variety" />
+                                                        <TreeTableColumn fx:id="cropColumn" prefWidth="80.0" text="Crop" />
+                                                        <TreeTableColumn fx:id="varietyColumn" prefWidth="80.0" text="Variety" />
                                                         <TreeTableColumn fx:id="volumeColumn" prefWidth="50.0" text="hl" />
                                                     </columns>
                                                 </TreeTableView>

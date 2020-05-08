@@ -24,14 +24,16 @@ public class ClientDao {
         return user;
     }
 
-    public ClientDao() {
-        this.url = "jdbc:sqlite:clients.db";
+    public ClientDao(String url) {
+        
+        this.url = "jdbc:sqlite:" + url + ".db";
         this.db = createConnection();
 
         this.user = LogInViewController.user;
     }
 
     private Connection createConnection() {
+        
         try {
             return DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -40,12 +42,13 @@ public class ClientDao {
     }
 
     public Connection getConnection() {
+        
         return db;
     }
 
     public void stopConnection() throws SQLException {
+        
         db.close();
-
     }
 
     public void createTable() throws SQLException {
@@ -56,7 +59,6 @@ public class ClientDao {
                 + "user TEXT, name TEXT, phone TEXT, address TEXT)");
 
         s.close();
-
     }
 
     public void create(Client client) throws SQLException {

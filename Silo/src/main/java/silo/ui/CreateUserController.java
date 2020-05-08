@@ -23,10 +23,6 @@ import javafx.scene.control.TextField;
  */
 public class CreateUserController {
 
-    private UserDao dao;
-
-    private User p;
-
     @FXML
     private TextField userNameField;
 
@@ -36,9 +32,6 @@ public class CreateUserController {
     @FXML
     private Label error;
 
-    @FXML
-    private Label userNameLabel;
-
     /**
      * Switches the view back to login-view.
      * 
@@ -47,6 +40,7 @@ public class CreateUserController {
      */
     @FXML
     private void handleBack(ActionEvent event) throws IOException {
+        
         userNameField.setText("");
         passWordField.setText("");
         error.setText("");
@@ -64,32 +58,32 @@ public class CreateUserController {
     @FXML
     private void handleCreate(ActionEvent event) throws SQLException, IOException {
 
-        UserDao d = new UserDao();
+        UserDao dao = new UserDao("users");
 
         String name = userNameField.getText();
+        String password = passWordField.getText();
 
-        if (name.length() < 3) {
-            // usernameLabel.setText("Username: (must contain at least 3 letters)");
-            error.setText("Practice your reading skills....");
+        if (name.length() < 3 || password.length() < 3) {
+            
+            error.setText("Must contain >2 characters");
             return;
         }
 
-        if (d.findUser(userNameField.getText()) != null) {
-            error.setText("Oops! This username is already registered");
+        if (dao.findUser(userNameField.getText()) != null) {
+            
+            error.setText("This username is already registered");
             return;
 
         } else {
 
-            User p = new User(userNameField.getText().toLowerCase(), passWordField.getText().toLowerCase());
+            User user = new User(userNameField.getText().toLowerCase(), passWordField.getText().toLowerCase());
 
-            d.create(p);
+            dao.create(user);
             userNameField.setText("");
             passWordField.setText("");
-            //    usernameLabel.setText("Username: (must contain at least 3 letters)");
             error.setText("");
 
             SiloUi.setRoot("LogInView");
-
         }
     }
 }

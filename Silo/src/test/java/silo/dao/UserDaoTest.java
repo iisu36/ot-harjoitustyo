@@ -24,12 +24,13 @@ public class UserDaoTest {
 
     Connection connection;
     UserDao dao;
-    User user;
 
     @Before
     public void setUp() throws Exception {
+        
+        dao = new UserDao("testusers");
 
-        connection = DriverManager.getConnection("jdbc:sqlite:users.db");
+        connection = dao.getConnection();
 
         Statement stmt = connection.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS "
@@ -37,8 +38,6 @@ public class UserDaoTest {
 
         Statement s = connection.createStatement();
         s.execute("INSERT INTO Users (username, password) VALUES ('testi', 'salasana')");
-
-        dao = new UserDao();
     }
 
     @Test

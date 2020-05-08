@@ -26,25 +26,24 @@ public class SiloDao {
     private Connection db;
     private User user;
 
-    public User getUser() {
-        return user;
-    }
+    public SiloDao(String url) {
 
-    public SiloDao() {
-        this.url = "jdbc:sqlite:silos.db";
+        this.url = "jdbc:sqlite:" + url + ".db";
         this.db = createConnection();
 
         this.user = LogInViewController.user;
     }
-    
-    public SiloDao(User user) {
-        this.url = "jdbc:sqlite:silos.db";
+
+    public SiloDao(String url, User user) {
+
+        this.url = "jdbc:sqlite:" + url + ".db";
         this.db = createConnection();
 
         this.user = user;
     }
 
     private Connection createConnection() {
+        
         try {
             return DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -53,12 +52,13 @@ public class SiloDao {
     }
 
     public Connection getConnection() {
+        
         return db;
     }
 
     public void stopConnection() throws SQLException {
+        
         db.close();
-
     }
 
     public void createTable(int columns, int rows) throws SQLException {
@@ -97,7 +97,6 @@ public class SiloDao {
         }
 
         s.close();
-
     }
 
     public void create(Silo silo) throws SQLException {
@@ -136,6 +135,11 @@ public class SiloDao {
         p.close();
     }
 
+    public User getUser() {
+
+        return user;
+    }
+
     public Silo getSilo(int row, int column) throws SQLException {
 
         Statement stmt = db.createStatement();
@@ -143,30 +147,30 @@ public class SiloDao {
 
         Silo silo = new Silo();
         Grain grain = new Grain();
-        
+
         if (!clientList.isEmpty()) {
-            
+
             for (Client listClient : clientList) {
-                
+
                 if (listClient.getName().equals(rs.getString("client"))) {
-                    
+
                     silo.setClient(listClient);
                     break;
                 } else {
-                    
+
                     silo.setClient(new Client(rs.getString("client")));
                 }
             }
         } else {
-         
-            silo.setClient(new Client(rs.getString("client")));    
+
+            silo.setClient(new Client(rs.getString("client")));
         }
 
         grain.setCrop(rs.getString("crop"));
         grain.setVariety(rs.getString("variety"));
         grain.setProductionMethod(rs.getString("production"));
         grain.setVolume(rs.getInt("volume"));
-        
+
         silo.setGrain(grain);
 
         stmt.close();
@@ -178,7 +182,7 @@ public class SiloDao {
     public ArrayList<Silo> findSilos(Client client) throws SQLException {
 
         ArrayList list = new ArrayList<Silo>();
-        
+
         PreparedStatement stmt = db.prepareStatement("SELECT silo FROM Silos WHERE user = '" + user.getName() + "' AND client = '" + client.getName() + "'");
 
         ResultSet rs = stmt.executeQuery();
@@ -230,7 +234,6 @@ public class SiloDao {
         stmt.close();
 
         return i;
-
     }
 
     public int getRows() throws SQLException {

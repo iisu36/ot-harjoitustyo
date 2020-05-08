@@ -10,30 +10,26 @@ import silo.domain.User;
 import java.sql.*;
 import java.util.ArrayList;
 import silo.domain.Silo;
-import static silo.ui.MainViewController.siloList;
 
 /**
- * @author  Iisakki
+ * @author Iisakki
  * @version Viikko 6
- * 
+ *
  * This class controls the userdatabase.
  */
 public class UserDao {
 
-    private static String url = "jdbc:sqlite:users.db";
-    private static Connection db = createConnection();
-
-    public UserDao() {
-        this.db = db;
-        this.url = url;
-    }
-
+    public String url;
+    public Connection db;
+    
     public UserDao(String url) {
-        this.url = url;
-        this.db = db;
+        
+        this.url = "jdbc:sqlite:" + url + ".db";
+        this.db = createConnection();
     }
 
-    private static Connection createConnection() {
+    private Connection createConnection() {
+
         try {
             return DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -41,20 +37,21 @@ public class UserDao {
         }
     }
 
-    public static Connection getConnection() {
+    public Connection getConnection() {
+
         return db;
     }
 
-    public static void stopConnection() throws SQLException {
-        db.close();
+    public void stopConnection() throws SQLException {
 
+        db.close();
     }
 
     /**
      * Creates the users table to the userdatabase.
-     * 
+     *
      * A user has a username and a password.
-     * 
+     *
      * @throws SQLException Exception.
      */
     public void createTable() throws SQLException {
@@ -64,13 +61,13 @@ public class UserDao {
         s.execute("CREATE TABLE IF NOT EXISTS Users (user_id INTEGER PRIMARY KEY, username TEXT UNIQUE, password TEXT)");
 
         s.close();
-
     }
 
     /**
      * Creates a new user to the database.
-     * 
-     * @param user  The user which username and password will be saved to database.
+     *
+     * @param user The user which username and password will be saved to
+     * database.
      * @throws SQLException Exception.
      */
     public void create(User user) throws SQLException {
@@ -88,16 +85,17 @@ public class UserDao {
 
         } catch (SQLException e) {
         }
+        
         s.close();
     }
 
     /**
      * Searches the user from the database.
-     * 
+     *
      * Returns the user's name and password if found, if not, null.
-     * 
-     * @param username  The user's name that is searched for.
-     * @return  User with the corresponding password. Or null.
+     *
+     * @param username The user's name that is searched for.
+     * @return User with the corresponding password. Or null.
      * @throws SQLException Exception.
      */
     public User findUser(String username) throws SQLException {
@@ -121,9 +119,9 @@ public class UserDao {
     }
 
     public ArrayList<String> list() throws SQLException {
-        
+
         ArrayList list = new ArrayList<Silo>();
-        
+
         PreparedStatement stmt = db.prepareStatement("SELECT username FROM Users");
 
         ResultSet rs = stmt.executeQuery();
@@ -138,17 +136,17 @@ public class UserDao {
         rs.close();
 
         return list;
-        
+
     }
 
     /**
      * Checks if the the username and the password matches eachother.
-     * 
+     *
      * If not, returns null, and if they do, returns the user.
-     * 
-     * @param username  Username in the database.
-     * @param passw     Username's corresponding password in the database.
-     * @return  Logging in user or null.
+     *
+     * @param username Username in the database.
+     * @param passw Username's corresponding password in the database.
+     * @return Logging in user or null.
      * @throws SQLException Exception.
      */
     public User isLogInOK(String username, String passw) throws SQLException {
@@ -170,4 +168,3 @@ public class UserDao {
         return okay;
     }
 }
-

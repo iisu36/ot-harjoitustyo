@@ -15,7 +15,6 @@ import org.junit.Test;
 import silo.domain.Client;
 import silo.domain.Silo;
 import silo.domain.User;
-import silo.domain.Grain;
 import static silo.ui.MainViewController.siloList;
 import static silo.ui.MainViewController.clientList;
 
@@ -43,8 +42,9 @@ public class SiloDaoTest {
     public void setUp() throws Exception {
 
         user = new User("testi", "salasana");
+        dao = new SiloDao("testsilos", user);
 
-        connection = DriverManager.getConnection("jdbc:sqlite:silos.db");
+        connection = dao.getConnection();
 
         Statement stmt = connection.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS Silos (silo_id INTEGER PRIMARY KEY, "
@@ -110,8 +110,6 @@ public class SiloDaoTest {
         list.add(3, new Silo());
         
         siloList = list;
-
-        dao = new SiloDao(user);
         
         client1 = new Client("Mikko Mallikas");
         client2 = new Client("Maija Meikäläinen");

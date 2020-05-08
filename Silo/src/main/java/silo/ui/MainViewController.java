@@ -71,8 +71,8 @@ public class MainViewController {
         clientList = new ArrayList<>();
         siloMap = new HashMap<>();
         siloLabelMap = new HashMap<>();
-        siloDao = new SiloDao();
-        clientDao = new ClientDao();
+        siloDao = new SiloDao("silos");
+        clientDao = new ClientDao("clients");
 
         int rows = siloDao.getRows();
         int columns = siloDao.getColumns();
@@ -84,6 +84,7 @@ public class MainViewController {
             for (int column = 0; column < columns; column++, k++) {
 
                 Button button = new Button("Silo " + k);
+                button.setMinSize(75, 75);
                 button.setMaxSize(75, 75);
                 button.setText(String.valueOf(k));
                 button.setStyle("-fx-text-fill: #00000043; "
@@ -203,9 +204,13 @@ public class MainViewController {
 
         clientColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("name"));
         siloColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("index"));
+        siloColumn.setStyle("-fx-alignment: center");
         cropColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("crop"));
+        cropColumn.setStyle("-fx-alignment: center");
         varietyColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("variety"));
+        varietyColumn.setStyle("-fx-alignment: center");
         volumeColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>("volume"));
+        volumeColumn.setStyle("-fx-alignment: center");
 
         clientTable.setShowRoot(true);
 
