@@ -30,6 +30,12 @@ import javafx.stage.Stage;
 import silo.dao.ClientDao;
 import static silo.ui.SiloUi.loadFXML;
 
+/**
+ * @author iisakki
+ * @version Viikko 7
+ *
+ * This class controls the main view of the program.
+ */
 public class MainViewController {
 
     public static ArrayList<Silo> siloList;
@@ -64,6 +70,11 @@ public class MainViewController {
     public SiloDao siloDao;
     public ClientDao clientDao;
 
+    /**
+     * Initializes the functionality and the main view using the databases.
+     *
+     * @throws SQLException Exception.
+     */
     @FXML
     public void initialize() throws SQLException {
 
@@ -127,6 +138,12 @@ public class MainViewController {
         }
     }
 
+    /**
+     * Controls the mouse clicking event.
+     *
+     * @param e MouseEvent.
+     * @throws SQLException Exception.
+     */
     @FXML
     public void mouseClicked(MouseEvent e) throws SQLException {
 
@@ -150,6 +167,15 @@ public class MainViewController {
         }
     }
 
+    /**
+     * Resets the selected silo in the map to it's base value.
+     *
+     * @throws IOException Exception.
+     * @throws SQLException Exception.
+     *
+     * @see silo.ui.MainViewController#resetSilo(silo.domain.Silo,
+     * javafx.scene.control.Button)
+     */
     @FXML
     public void remove() throws IOException, SQLException {
 
@@ -175,6 +201,11 @@ public class MainViewController {
 
     }
 
+    /**
+     * Creates the clientTree and it's functionality.
+     *
+     * @throws SQLException Exception.
+     */
     @FXML
     public void createClientTree() throws SQLException {
 
@@ -232,6 +263,11 @@ public class MainViewController {
         clientTable.setRoot(clientTree);
     }
 
+    /**
+     * Updated the clientree to show the current client situation.
+     *
+     * @throws SQLException Exception.
+     */
     @FXML
     public void updateClientTree() throws SQLException {
 
@@ -255,11 +291,21 @@ public class MainViewController {
         clientTable.setRoot(clientTree);
     }
 
+    /**
+     * Returns the silo last clicked on.
+     *
+     * @return The silo last clicked on.
+     */
     @FXML
     public static Silo getSilo() {
         return siloMap.get(source);
     }
 
+    /**
+     * Updates the silos graphic display to current situation.
+     *
+     * @param silo The selected silo.
+     */
     public static void showInfo(Silo silo) {
 
         if (!silo.getClient().getName().isBlank()) {
@@ -274,6 +320,12 @@ public class MainViewController {
         }
     }
 
+    /**
+     * Checks if the selected client is old or new.
+     *
+     * @param name The selected client's name.
+     * @return The client if it is old one, null it it is a new one.
+     */
     public static Client isNewClient(String name) {
 
         for (Client current : clientList) {
@@ -287,6 +339,12 @@ public class MainViewController {
         return null;
     }
 
+    /**
+     * Resets the silo to it's base values.
+     *
+     * @param silo The selected silo.
+     * @param button The selected silo's button in the silomap.
+     */
     public void resetSilo(Silo silo, Button button) {
         silo.setClient(new Client(""));
         silo.setGrain(new Grain());
@@ -298,6 +356,11 @@ public class MainViewController {
         button.setPadding(Insets.EMPTY);
     }
 
+    /**
+     * Sets the silo's color to indicate the grain's volume.
+     *
+     * @param silo The selected silo.
+     */
     public static void setSiloStyle(Silo silo) {
 
         Grain grain = silo.getGrain();

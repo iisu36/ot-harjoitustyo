@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package silo.dao;
 
 import java.sql.*;
@@ -11,8 +6,10 @@ import silo.domain.User;
 import silo.ui.LogInViewController;
 
 /**
+ * @author Iisakki
+ * @version Viikko 7
  *
- * @author Iizu
+ * This class controls the clientdatabase.
  */
 public class ClientDao {
 
@@ -27,7 +24,7 @@ public class ClientDao {
 
         this.user = LogInViewController.user;
     }
-    
+
     public ClientDao(String url, User user) {
 
         this.url = "jdbc:sqlite:" + url + ".db";
@@ -55,6 +52,13 @@ public class ClientDao {
         db.close();
     }
 
+    /**
+     * Creates the "Clients" table to the database.
+     *
+     * A client has a user, name, phonenumber and an address.
+     *
+     * @throws SQLException Exception.
+     */
     public void createTable() throws SQLException {
 
         Statement s = db.createStatement();
@@ -65,6 +69,14 @@ public class ClientDao {
         s.close();
     }
 
+    /**
+     * Inserts a new client to the database.
+     *
+     * A client has a user, name, phonenumber and an address.
+     *
+     * @param client The client to be inserted to the database.
+     * @throws SQLException Exception.
+     */
     public void create(Client client) throws SQLException {
 
         Statement s = db.createStatement();
@@ -83,9 +95,15 @@ public class ClientDao {
         p.close();
     }
 
-    public void remove(Client poistettava) throws SQLException {
+    /**
+     * Removes a client from the database.
+     *
+     * @param removable The client to be removed.
+     * @throws SQLException Exception.
+     */
+    public void remove(Client removable) throws SQLException {
 
-        int id = getClientId(poistettava);
+        int id = getClientId(removable);
 
         Statement s = db.createStatement();
 
@@ -95,6 +113,15 @@ public class ClientDao {
         s.close();
     }
 
+    /**
+     * Searches for the selected client's id-index in the database.
+     *
+     * Id-index is the primary key in the Clients-table.
+     *
+     * @param client The selected client.
+     * @return The id of the selected client.
+     * @throws SQLException Exception.
+     */
     public int getClientId(Client client) throws SQLException {
 
         PreparedStatement stmt = db.prepareStatement("SELECT client_id FROM Clients "

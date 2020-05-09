@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package silo.domain;
 
 /**
- *
  * @author Iizu
+ * @version Viikko 7
+ *
+ * This class controls the grain's values.
  */
-
 public class Grain {
-    
+
     private String crop;
     private String variety;
     private int volume;
@@ -47,5 +43,5 @@ public class Grain {
 
     public String getProductionMethod() {
         return productionMethod;
-    }    
+    }
 }

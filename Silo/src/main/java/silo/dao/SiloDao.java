@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package silo.dao;
 
 import java.sql.*;
@@ -17,8 +12,10 @@ import static silo.ui.MainViewController.siloList;
 import static silo.ui.MainViewController.clientList;
 
 /**
+ * @author Iisakki
+ * @version Viikko 7
  *
- * @author Iizu
+ * This class controls the silodatabase.
  */
 public class SiloDao {
 
@@ -61,6 +58,40 @@ public class SiloDao {
         db.close();
     }
 
+    /**
+     * Creates the "Silos" table to the database.
+     *
+     * A silo has a user, silonumber, row and column index, client and a grain.
+     * The grain consists of crop, variety, volume and production method.
+     *
+     * @param columns The number of columns in the silomap.
+     * @param rows The number of rows in the silomap.
+     * @throws SQLException Exception.
+     *
+     * @see silo.dao.SiloDao#insertTable(int, int)
+     */
+    public void createTable(int columns, int rows) throws SQLException {
+
+        Statement s = db.createStatement();
+
+        s.execute("CREATE TABLE IF NOT EXISTS Silos (silo_id INTEGER PRIMARY KEY, "
+                + "user TEXT, silo INTEGER, row INTEGER, column INTEGER, "
+                + "client TEXT, crop TEXT, variety TEXT, volume INTEGER, production TEXT)");
+
+        s.close();
+
+        insertTable(columns, rows);
+    }
+
+    /**
+     * Inserts base values to the silos in the table.
+     *
+     * Works for the createTable-method.
+     *
+     * @param columns The number of columns in the silomap.
+     * @param rows The number of rows in the silomap.
+     * @throws SQLException Exception.
+     */
     public void insertTable(int columns, int rows) throws SQLException {
 
         int k = 1;
@@ -88,19 +119,15 @@ public class SiloDao {
         }
     }
 
-    public void createTable(int columns, int rows) throws SQLException {
-
-        Statement s = db.createStatement();
-
-        s.execute("CREATE TABLE IF NOT EXISTS Silos (silo_id INTEGER PRIMARY KEY, "
-                + "user TEXT, silo INTEGER, row INTEGER, column INTEGER, "
-                + "client TEXT, crop TEXT, variety TEXT, volume INTEGER, production TEXT)");
-
-        s.close();
-
-        insertTable(columns, rows);
-    }
-
+    /**
+     * Updates silo's information in the database.
+     *
+     * A silo has a user, silonumber, row and column index, client and a grain.
+     * The grain consists of crop, variety, volume and production method.
+     *
+     * @param silo The selected silo to be updated.
+     * @throws SQLException Exception.
+     */
     public void create(Silo silo) throws SQLException {
 
         PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, "
@@ -118,6 +145,12 @@ public class SiloDao {
         p.close();
     }
 
+    /**
+     * Returns silo's information to basevalues.
+     *
+     * @param silo The selected silo to be updated.
+     * @throws SQLException Exception.
+     */
     public void remove(Silo silo) throws SQLException {
 
         PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, "
@@ -135,10 +168,20 @@ public class SiloDao {
         p.close();
     }
 
+    /**
+     * Searches the silo from the database.
+     *
+     * Returns the silo based on row and column index.
+     *
+     * @param column The column index of the selected silo.
+     * @param row The rox index of the selected silo.
+     * @return The silo based on row and column index.
+     * @throws SQLException Exception.
+     */
     public Silo getSilo(int row, int column) throws SQLException {
 
         Statement stmt = db.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM Silos WHERE user = '" 
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Silos WHERE user = '"
                 + user.getName() + "' AND row = " + row + " AND column = " + column);
 
         Silo silo = new Silo();
@@ -161,6 +204,16 @@ public class SiloDao {
         return silo;
     }
 
+    /**
+     * Sets an exixting or a new client to a silo.
+     *
+     * Goes through existing clients from a list and checks if the client is old
+     * or new, and sets a corresponding client for a silo.
+     *
+     * @param silo The selected silo.
+     * @param name The name of the client in search.
+     * @return The selected silo with updated client.
+     */
     public Silo checkClient(Silo silo, String name) {
 
         if (!clientList.isEmpty()) {
@@ -171,19 +224,27 @@ public class SiloDao {
 
                     silo.setClient(listClient);
                     break;
-                } 
+                }
             }
-            
+
             silo.setClient(new Client(name));
-            
+
         } else {
 
             silo.setClient(new Client(name));
         }
-        
+
         return silo;
     }
 
+    /**
+     * Lists all the silos the selected client is using.
+     *
+     * @param client The selected client.
+     * @return List of all the client's silos or null, if the client has no
+     * silos.
+     * @throws SQLException Exception.
+     */
     public ArrayList<Silo> findSilos(Client client) throws SQLException {
 
         ArrayList list = new ArrayList<Silo>();
@@ -205,6 +266,11 @@ public class SiloDao {
         return list;
     }
 
+    /**
+     * Checks if the user has created a silomap.
+     *
+     * @return True if user has a silomap, false if not.
+     */
     public boolean hasMap() {
 
         Statement stmt;
@@ -229,6 +295,12 @@ public class SiloDao {
         return true;
     }
 
+    /**
+     * Counts the columns in the silomap.
+     *
+     * @return The column count in the silomap.
+     * @throws SQLException Exception.
+     */
     public int getColumns() throws SQLException {
 
         Statement stmt = db.createStatement();
@@ -244,6 +316,12 @@ public class SiloDao {
         return i;
     }
 
+    /**
+     * Counts the rows in the silomap.
+     *
+     * @return The row count in the silomap.
+     * @throws SQLException Exception.
+     */
     public int getRows() throws SQLException {
 
         Statement stmt = db.createStatement();

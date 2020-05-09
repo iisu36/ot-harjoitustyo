@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package silo.dao;
 
 import silo.domain.User;
@@ -48,7 +43,7 @@ public class UserDao {
     }
 
     /**
-     * Creates the users table to the userdatabase.
+     * Creates the "Users" table to the userdatabase.
      *
      * A user has a username and a password.
      *

@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
+ * @author Iisakki
+ * @version Viikko 7
+ *
  * JavaFX App
  */
 public class SiloUi extends Application {

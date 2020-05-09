@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package silo.domain;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
- *
  * @author Iizu
+ * @version Viikko 7
+ *
+ * This class controls the silo's values.
  */
 public class Silo {
 
@@ -96,11 +93,22 @@ public class Silo {
         this.grain = grain;
     }
 
+    /**
+     * Returns the client's name, crop and volume.
+     *
+     * @return Returns the client's name, crop and volume.
+     */
     @Override
     public String toString() {
         return client.getName() + "\n" + grain.getCrop() + "\n" + grain.getVolume() + " hl";
     }
 
+    /**
+     * Returns all the values of a silo.
+     *
+     * @return Returns the client's name, crop, variety, volume and production
+     * method.
+     */
     public String allInfo() {
         return client.getName() + "\n" + grain.getCrop() + "\n"
                 + grain.getVariety() + "\n" + grain.getVolume() + " hl\n"

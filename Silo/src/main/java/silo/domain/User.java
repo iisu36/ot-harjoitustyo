@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package silo.domain;
 
 import java.util.Objects;
 
 /**
- *
  * @author Iizu
+ * @version Viikko 7
+ *
+ * This class controls the user's values.
  */
 public class User {
 
@@ -32,16 +29,16 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object object) {
 
-        if (this == o) {
+        if (this == object) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
 
-        User user = (User) o;
+        User user = (User) object;
         return username.equals(user.username)
                 && password.equals(user.password);
     }

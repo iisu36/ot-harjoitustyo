@@ -53,7 +53,7 @@ public class CreateMapController {
 
             SiloUi.setRoot("MainView");
         } else {
-            
+
             error.setText("Only numbers from 1 to 9");
         }
     }
