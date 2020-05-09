@@ -13,11 +13,13 @@
 
 ## Releaset
 
-[Viikko 4](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko4)
+[Loppupalautus](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko7)
+
+[Viikko 6](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko6)
 
 [Viikko 5](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko5)
 
-[Viikko 6](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko6)
+[Viikko 4](https://github.com/iisu36/ot-harjoitustyo/releases/tag/viikko4)
 
 ## Komentorivitoiminnot
 
@@ -59,7 +61,7 @@ JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/ind
 
 ### Checkstyle
 
-Tiedostoon [checkstyle.xml](https://github.com/iisu36/ot-harjoitustyo/blob/master/Silo/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+Tiedostoon [checkstyle.xml](https://github.com/iisu36/ot-harjoitustyo/blob/master/Silo/checkstyle.xml) määrittellyt tarkistukset suoritetaan komennolla
 
 ```
  mvn jxr:jxr checkstyle:checkstyle
