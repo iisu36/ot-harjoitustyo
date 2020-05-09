@@ -21,4 +21,7 @@
 | 5 | 21.04 |  4   | testien ja sekvenssikaavion tekemistä |
 | 6 | 27.04 |  4   | treetableview asiakkaat ja siilot |
 | 6 | 28.04 |  4   | testien ja javadocin tekemistä, pakettikaavio |
-|  |**yhteensä**|  **85**  |  
+| 7 | 07.05 |  3   | virheellisten syötteiden eliminointia, käyttöliittymän parantelua |
+| 7 | 08.05 |  3   | checkstyle-virheiden eliminointia, koodin siistimistä |
+| 7 | 09.04 |  4   | javadocin päivitys, testien tekemistä, koodin siistimistä |
+|  |**yhteensä**|  **95**  |  
