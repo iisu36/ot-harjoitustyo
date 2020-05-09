@@ -95,6 +95,6 @@ public class UserDaoTest {
         
         s.execute("DROP TABLE Users");
         
-        connection.close();
+        dao.stopConnection();
     }
 }

@@ -1,7 +1,6 @@
 package silo.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -155,32 +154,6 @@ public class SiloDaoTest {
         assertEquals(0, silo3.getGrain().getVolume());
     }
     
-//    @Test
-//    public void createSiloWorksCorrectly() throws SQLException {
-//        Silo silo3 = new Silo();
-//        silo3 = dao.getSilo(9, 9);
-//
-//        Grain grain3 = new Grain();        
-//        grain3.setCrop("herne");
-//        
-//        Client client3 = new Client("Matti");
-//        
-//        silo3.setGrain(grain3);
-//        silo3.setClient(client3);
-//        //silo3.setIndex(99);
-//        
-//        
-//        clientList.add(client3);
-//        
-//        
-//        dao.create(silo3);
-//        
-//        
-//        assertEquals("Matti", silo3.getClient().getName());
-//        assertEquals("herne", silo3.getGrain().getCrop());
-//        assertEquals(99, silo3.getIndex());
-//    }
-
     @Test
     public void listingSilosCorrectly() throws SQLException {
         ArrayList<Silo> silos1 = dao.findSilos(client1);
@@ -210,16 +183,6 @@ public class SiloDaoTest {
         assertEquals("Vilja", silo2.getGrain().getCrop());
         assertEquals(1200, silo2.getGrain().getVolume());
     }
-    
-    @Test
-    public void gettingColumnsWorks() throws SQLException {
-        assertEquals(0, dao.getColumns());
-    }
-    
-    @Test
-    public void gettingRowsWorks() throws SQLException {
-        assertEquals(0, dao.getRows());
-    }
 
     @After
     public void tearDown() throws SQLException {
@@ -227,7 +190,7 @@ public class SiloDaoTest {
 
         s.execute("DROP TABLE Silos");
 
-        connection.close();
+        dao.stopConnection();
     }
 
 }

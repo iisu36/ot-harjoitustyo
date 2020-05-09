@@ -20,16 +20,20 @@ public class ClientDao {
     private Connection db;
     private User user;
 
-    public User getUser() {
-        return user;
-    }
-
     public ClientDao(String url) {
 
         this.url = "jdbc:sqlite:" + url + ".db";
         this.db = createConnection();
 
         this.user = LogInViewController.user;
+    }
+    
+    public ClientDao(String url, User user) {
+
+        this.url = "jdbc:sqlite:" + url + ".db";
+        this.db = createConnection();
+
+        this.user = user;
     }
 
     private Connection createConnection() {
@@ -105,24 +109,5 @@ public class ClientDao {
         rs.close();
 
         return id;
-    }
-
-    public String list() throws SQLException {
-
-        Statement stmt = db.createStatement();
-
-        ResultSet rs = stmt.executeQuery("SELECT name FROM Clients WHERE user = '"
-                + user.getName() + "'");
-
-        String list = "";
-
-        while (rs.next()) {
-            list += rs.getString("name") + "\n";
-        }
-
-        stmt.close();
-        rs.close();
-
-        return list;
     }
 }

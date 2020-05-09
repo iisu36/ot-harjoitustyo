@@ -103,8 +103,6 @@ public class SiloDao {
 
     public void create(Silo silo) throws SQLException {
 
-        Statement s = db.createStatement();
-
         PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, "
                 + "crop = ?, variety = ?, volume= ?, production= ? WHERE user = '"
                 + user.getName() + "' AND silo = " + silo.getIndex());
@@ -117,13 +115,10 @@ public class SiloDao {
 
         p.executeUpdate();
 
-        s.close();
         p.close();
     }
 
     public void remove(Silo silo) throws SQLException {
-
-        Statement s = db.createStatement();
 
         PreparedStatement p = db.prepareStatement("UPDATE Silos SET client = ?, "
                 + "crop = ?, variety = ?, volume= ?, production= ? WHERE user = '"
@@ -137,13 +132,7 @@ public class SiloDao {
 
         p.executeUpdate();
 
-        s.close();
         p.close();
-    }
-
-    public User getUser() {
-
-        return user;
     }
 
     public Silo getSilo(int row, int column) throws SQLException {

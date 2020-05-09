@@ -16,10 +16,6 @@ public class Grain {
     private String variety;
     private int volume;
     private String productionMethod;
-    
-    public Grain() {
-        
-    }
 
     public String getCrop() {
         return crop;

@@ -5,7 +5,6 @@
  */
 package silo.domain;
 
-//import java.util.ArrayList;
 import java.util.ArrayList;
 
 /**
@@ -47,10 +46,6 @@ public class Client {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ArrayList<Silo> getSiloList() {
         return siloList;
     }
@@ -63,40 +58,8 @@ public class Client {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getCrop() {
-        return crop;
-    }
-
-    public void setCrop(String crop) {
-        this.crop = crop;
-    }
-
-    public String getVariety() {
-        return variety;
-    }
-
-    public void setVariety(String variety) {
-        this.variety = variety;
-    }
-
-    public String getVolume() {
-        return volume;
-    }
-
-    public void setVolume(String volume) {
-        this.volume = volume;
     }
 
     @Override
