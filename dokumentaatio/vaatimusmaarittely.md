@@ -2,81 +2,61 @@
 
 ## Sovelluksen tarkoitus
 
-Viljankuivurin varastointisovellus. 
-
-Sovellukseen voidaan tallettaa ja sieltä saadaan helposti ja nopeasti tietoja:
-
- - [x] Varastosiilo
- - [x] Asiakas
- - [x] Laji
- - [x] Lajike
- - [x] Tuotantomuoto
- - [x] Määrä
- - [x] Aikaleimat
- 
- Sovelluksesta saadaan tuloste varastotilanteesta viranomaisille.
-
-## Asiakkaat
-
-- [x] Nimi
-- [x] Osoite
-- [x] Puhelinnumero
-- [ ] Mahdolliset laskutustiedot
-
-## Käyttöliittymäluonnos
-
-- [x] Siilokartta näkyvissä
-- [x] Siilojen valinta kartasta
-- [x] Lisäys
-- [ ] Lajittelu
-- [ ] Tulosteet
-- [ ] Haettaessa tietoja siilojen korostus kartassa hakuehtojen mukaisesti
-- [x] Siilojen väritys ilmaisee varastokapasiteetin (valkoinen vapaa - vihreästä liukuväri punaiseen - täynnä)
-- [x] Siiloissa taustalla numerointi ja edessä asiakas, laji ja määrä
-- [ ] Siilosta aukeaa uusi ikkuna
-    - [ ] Monipuolisten tietojen esitys ja täyttäminen
-    - [ ] Siilon historia esim. 5 vuotta
-    - [ ] Viljapassin tulostus
+Viljankuivurin varastointisovellus. Sovellukseen voidaan tallettaa ja sieltä saadaan helposti ja nopeasti tietoja.
 
 ## Säilytettäviä tietoja
 
-- [x] Asiakkaan tiedot
-- [x] Siilon tiedot
-    - [ ] Historia
-    - [ ] Lajisiilo?
-- [ ] Kuivaustietoja
-    - [ ] Kosteusprosentti
-    - [ ] Kuivausaika
-    - [ ] Kuivausarvot
-    - [ ] Päivämäärä
-- [ ] Viljan tiedot
-    - [ ] Miltä lohkolta
-    - [ ] Käyttötarkoitus
-    - [ ] Muita muistiinpanoja
-- [ ] Varastotilanne
-    - [ ] Kuivurin lajimäärät ja tuotantotavat
+Sovellus säilyttää tietoja siilojen asiakkaista, viljalajeista, viljalajikkeista, määristä ja tuotantomuodosta. Sovellus pitää myös listaa asikkaiden kaikista siiloista.  
 
-## Perusversion tarjoama toiminnallisuus
+## Sovelluksen toiminnallisuus
 
-- [ ] Siilo- ja asiakaskohtaisten tietojen syöttäminen ja hakeminen
-- [ ] Vaadittujen tietojen ryhmittäminen
-- [ ] Aikaan sidotun varastotilanteen tulostaminen
-- [ ] Syötteiden jäljitettävyys
-- [ ] Siilohistoria (esim. VAIN luomu- tai lajikesiilot)
-- [ ] Siiloilla mahdollisesti tietty viljalaji
-- [ ] Viljapassin tulostus
-- [ ] Varastotilanteen tulostus
+- Käyttäjän luominen
+- Siilokartan luominen
+- Siilojen tietojen asettaminen ja poistaminen
+- Valitun siilon kaikkien tietojen esittäminen
+- Puuesitys asiakkaista ja asiakkaiden siiloista tietoineen
+- Sovellus näyttää siilokartassa siilon numeron, asiakkaan, viljalajin ja määrän hehtolitroina
+- Sovellus ilmaisee siilokartassa siilon kapasiteetin värikoodein
+    - Tyhjä - harmaa
+    - Tilaa - Vihreä - Keltainen - Oranssi - Punainen - Täynnä
 
 ## Jatkokehitysideoita
 
-Perusversion jälkeen järjestelmää täydennetään ajan salliessa.
+Jatkokehitysideoita on runsaasti, sovelluksessa on vasta runkotoiminnallisuus valmiina. Tärkeinpänä olisi saada sovelluksesta  tuloste varastotilanteesta viranomaisille. Sovelluksen tulisi myös toimia tietokoneen lisäksi muillakin laitteilla ja tallettaa tietoja pilveen. 
 
-- [ ] Siilojen tietojen siirtäminen toiseen
-- [x] "Siilokartan" luominen kuivurikohtaisesti
-- [ ] Kuivurin logiikan yhdistäminen sovellukseen
-    - [ ] Logiikan seuranta
-    - [ ] Viljaelevaattoreiden ja sähköjakajien ohjaaminen manuaalisesti
-    - [ ] Automaattisten jakoreittien luominen kohdesiiloon
-    - [ ] Vaakasiilojen hallinta
-    - [ ] Kuivaustoimintojen seuranta ja hallinta
-
+- Siilo- ja asiakaskohtaisten tietojen syöttäminen ja hakeminen
+- Haluttujen tietojen ryhmittäminen
+- Aikaan sidotun varastotilanteen tulostaminen
+- Syötteiden jäljitettävyys
+- Siilohistoria (esim. VAIN luomu- tai lajisiilot)
+- Siiloilla mahdollisesti tietty viljalaji
+- Viljapassin tulostus
+- Varastotilanteen tulostus
+- Siiloilla historia
+- Kuivaustietoja
+    - Kosteusprosentti
+    - Kuivausaika
+    - Kuivausarvot
+    - Päivämäärä
+- Viljan tiedot
+    - Miltä lohkolta
+    - Käyttötarkoitus
+    - Muita muistiinpanoja
+- Varastotilanne
+    - Kuivurin lajimäärät ja tuotantotavat
+- Siilosta aukeaa uusi ikkuna
+    - Monipuolisten tietojen esitys ja täyttäminen
+    - Siilon historia esim. 5 vuotta
+    - Viljapassin tulostus
+- Mahdolliset asiakkaiden laskutustiedot
+- Siilojen lajittelu erilaisin perustein
+- Tulosteet
+- Haettaessa tietoja siilojen korostus kartassa hakuehtojen mukaisesti
+- Siilojen tietojen siirtäminen toiseen
+- Siilokartan luominen kuivurikohtaisesti, kartan muokkaaminen
+- Kuivurin logiikan yhdistäminen sovellukseen
+    - Logiikan seuranta
+    - Viljaelevaattoreiden ja sähköjakajien ohjaaminen manuaalisesti
+    - Automaattisten jakoreittien luominen kohdesiiloon
+    - Vaakasiilojen hallinta
+    - Kuivaustoimintojen seuranta ja hallinta
