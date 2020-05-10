@@ -25,4 +25,4 @@
 | 7 | 08.05 |  3   | checkstyle-virheiden eliminointia, koodin siistimistä |
 | 7 | 09.04 |  4   | javadocin päivitys, testien tekemistä, koodin siistimistä |
 | 7 | 10.04 |  2   | dokumentaation tekemistä |
-|  |**yhteensä**|  **95**  |  
+|  |**yhteensä**|  **97**  |  
