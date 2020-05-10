@@ -6,7 +6,7 @@ Jos luotiin uusi käyttäjä, siirrytään sisäänkirjauduttaessa luomaan siilo
 parametrit ja painetaan "create".
 
 Ikkunaa aukeaa päänäkymä, jossa näkyy oikealla luotu siilokartta, jossa jokainen siilo on numeroitu. Vasemmalla näkyy 
-infopalkki "Information", johon ilmestyy siiloa klikkaamalla kyseisen siilon tiedot, ja "Clients", joka näyttää kaikki 
+infopalkki "Siloinfo", johon ilmestyy siiloa klikkaamalla kyseisen siilon tiedot, ja "Clients", joka näyttää kaikki 
 tämänhetkiset asiakkaat siiloineen. "Clients" välilehti päivittyy käymällä "Information" välilehdellä ja palaamalla takaisin. 
 Vasemmassa ylälaidassa on "remove" nappi, joka toimii ensin valitsemalla haluttu siilo ja sen jälkeen painamalla "remove" 
 nappia, jolloin siilon tiedot nollaantuvat.
