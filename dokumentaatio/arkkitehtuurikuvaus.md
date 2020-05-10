@@ -2,14 +2,27 @@
 
 ## Rakenne
 
-**Pakkauskaavio**
+<img src="https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/silo-package.png" width="300">
 
-![alt text](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/silo-package.png)
+## Käyttöliittymä
 
-**Luokkakaavio**
+Käyttöliittymässä on viisi eri näkymää
+- kirjautuminen
+- uuden käyttäjän luominen
+- uuden siilokartan luominen
+- siilokarttanäkymä
+- siilon tietojen syöttäminen
 
-![alt text](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/silo-class.png)
+## Sovelluslogiikka
 
-**Sekvenssikaavio**
+### Luokkakaavio
 
-![alt text](https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/silo-sequence.png)
+<img src="https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/silo-class.png" width="300">
+
+### Sekvenssikaavio
+
+<img src="https://github.com/iisu36/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/silo-sequence.png" width="800">
+
+## Tietojen pysyväistallennus
+
+Käyttäjätiedot tallenetaan userDao-luokan avulla users-tietokantaan, asiakastiedot clientDao-luokan avulla clients.tietokantaan ja siilovaraston tiedot siloDao-luokan avulla silos-tietokantaan.
