@@ -24,4 +24,5 @@
 | 7 | 07.05 |  3   | virheellisten syötteiden eliminointia, käyttöliittymän parantelua |
 | 7 | 08.05 |  3   | checkstyle-virheiden eliminointia, koodin siistimistä |
 | 7 | 09.04 |  4   | javadocin päivitys, testien tekemistä, koodin siistimistä |
+| 7 | 10.04 |  2   | dokumentaation tekemistä |
 |  |**yhteensä**|  **95**  |  
